@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spaceTrash4.mp3-4f52853d02374a5d8717a7c8e40c510b.mp3str"
+
+[deps]
+
+source_file="res://Digital_SFX_Set/spaceTrash4.mp3"
+dest_files=[ "res://.import/spaceTrash4.mp3-4f52853d02374a5d8717a7c8e40c510b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

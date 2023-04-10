@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://imagens/Fireball1.png" type="Texture" id=1]
+[ext_resource path="res://imagens/Fireball2.png" type="Texture" id=2]
+[ext_resource path="res://Tiro.gd" type="Script" id=3]
+[ext_resource path="res://Digital_SFX_Set/laser2.mp3" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "tiro",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 3.5 )
+
+[node name="Tiro" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "tiro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 0.5 )
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[connection signal="body_entered" from="." to="." method="_on_Tiro_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

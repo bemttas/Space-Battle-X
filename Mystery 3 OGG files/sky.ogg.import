@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sky.ogg-a9170a9c9a6966b01ea2bac551eee39d.oggstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/sky.ogg"
+dest_files=[ "res://.import/sky.ogg-a9170a9c9a6966b01ea2bac551eee39d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/phaserUp5.mp3-0053ab41848410a7a1552068425c094e.mp3str"
+
+[deps]
+
+source_file="res://Digital_SFX_Set/phaserUp5.mp3"
+dest_files=[ "res://.import/phaserUp5.mp3-0053ab41848410a7a1552068425c094e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

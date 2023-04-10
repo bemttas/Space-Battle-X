@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pepSound3.mp3-a54f358db855bbec34912da6aa61ba36.mp3str"
+
+[deps]
+
+source_file="res://Digital_SFX_Set/pepSound3.mp3"
+dest_files=[ "res://.import/pepSound3.mp3-a54f358db855bbec34912da6aa61ba36.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

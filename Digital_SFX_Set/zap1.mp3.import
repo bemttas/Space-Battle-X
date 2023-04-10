@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zap1.mp3-567ac02c9a4593cb2be9aefc328863a5.mp3str"
+
+[deps]
+
+source_file="res://Digital_SFX_Set/zap1.mp3"
+dest_files=[ "res://.import/zap1.mp3-567ac02c9a4593cb2be9aefc328863a5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
