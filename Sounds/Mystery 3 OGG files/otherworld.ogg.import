@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/otherworld.ogg-e6e0a6d2eab5c4aaa0e2213d5ec58b1d.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Mystery 3 OGG files/otherworld.ogg"
+dest_files=[ "res://.import/otherworld.ogg-e6e0a6d2eab5c4aaa0e2213d5ec58b1d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

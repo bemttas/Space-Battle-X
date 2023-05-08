@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lowThreeTone.mp3-2b6c872bb68827a0882f5692d38d1a18.mp3str"
+
+[deps]
+
+source_file="res://Sounds/lowThreeTone.mp3"
+dest_files=[ "res://.import/lowThreeTone.mp3-2b6c872bb68827a0882f5692d38d1a18.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

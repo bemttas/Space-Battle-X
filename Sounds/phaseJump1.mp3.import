@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/phaseJump1.mp3-d5503308e55de5634ada4bdd0595ca40.mp3str"
+
+[deps]
+
+source_file="res://Sounds/phaseJump1.mp3"
+dest_files=[ "res://.import/phaseJump1.mp3-d5503308e55de5634ada4bdd0595ca40.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

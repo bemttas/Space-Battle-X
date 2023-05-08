@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/laser5.mp3-0e95addc9cbe9710a2399f8fb9fef4d6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/laser5.mp3"
+dest_files=[ "res://.import/laser5.mp3-0e95addc9cbe9710a2399f8fb9fef4d6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/phaserDown2.mp3-bed879151f4148916e06f526c04f32c6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/phaserDown2.mp3"
+dest_files=[ "res://.import/phaserDown2.mp3-bed879151f4148916e06f526c04f32c6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

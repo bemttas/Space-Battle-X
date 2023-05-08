@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/highUp.mp3-5958c70a5337a4755b76753753f69906.mp3str"
+
+[deps]
+
+source_file="res://Sounds/highUp.mp3"
+dest_files=[ "res://.import/highUp.mp3-5958c70a5337a4755b76753753f69906.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

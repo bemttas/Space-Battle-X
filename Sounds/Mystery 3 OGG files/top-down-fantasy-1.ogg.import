@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/top-down-fantasy-1.ogg-aa5e8d73ec2a226796b151a96b8fc54a.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Mystery 3 OGG files/top-down-fantasy-1.ogg"
+dest_files=[ "res://.import/top-down-fantasy-1.ogg-aa5e8d73ec2a226796b151a96b8fc54a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

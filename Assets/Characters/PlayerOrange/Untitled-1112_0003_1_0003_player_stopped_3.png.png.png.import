@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Untitled-1112_0003_1_0003_player_stopped_3.png.png.png-337fd60ae71a8f74c42ec8fac7fa082d.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/Characters/PlayerOrange/Untitled-1112_0003_1_0003_player_stopped_3.png.png.png"
+dest_files=[ "res://.import/Untitled-1112_0003_1_0003_player_stopped_3.png.png.png-337fd60ae71a8f74c42ec8fac7fa082d.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

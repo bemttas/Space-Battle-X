@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/twoTone2.mp3-fd2945b9d22309012edeb5ace11c4c18.mp3str"
+
+[deps]
+
+source_file="res://Sounds/twoTone2.mp3"
+dest_files=[ "res://.import/twoTone2.mp3-fd2945b9d22309012edeb5ace11c4c18.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

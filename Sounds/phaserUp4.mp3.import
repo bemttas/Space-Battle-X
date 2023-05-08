@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/phaserUp4.mp3-5075205f8859dd7060778da8466e8689.mp3str"
+
+[deps]
+
+source_file="res://Sounds/phaserUp4.mp3"
+dest_files=[ "res://.import/phaserUp4.mp3-5075205f8859dd7060778da8466e8689.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

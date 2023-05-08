@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spaceTrash5.mp3-fb252728d32bd89fcaddd0595f08f778.mp3str"
+
+[deps]
+
+source_file="res://Sounds/spaceTrash5.mp3"
+dest_files=[ "res://.import/spaceTrash5.mp3-fb252728d32bd89fcaddd0595f08f778.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
