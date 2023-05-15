@@ -21,7 +21,6 @@ var lado = true
 var isdash = false
 var can_dash_in_air = true
 var agachado = false
-
 var is_dead = false
 
 func _physics_process(delta):
@@ -136,6 +135,11 @@ func hit():
 			dead()
 		invincible = true
 		invincibleTimer = invincibleDuration
+		collision_layer = 2
+		collision_mask = 2
+		yield(get_tree().create_timer(1.0), "timeout")
+		collision_layer = 1
+		collision_mask = 1
 		yield(get_tree().create_timer(1.0), "timeout")
 		invincible = false
 	
