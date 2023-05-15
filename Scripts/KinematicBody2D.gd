@@ -9,8 +9,12 @@ const DASH_TIME = 0.3
 const MAX_SPEED = 200
 const ACC = 50
 
-const tiro = preload("res://Scenes/Tiro.tscn")
+var invincible = false
+var invincibleDuration = 1.0
+var invincibleTimer = 0.0
 
+const tiro = preload("res://Scenes/Tiro.tscn")
+var HP = 100.0
 var dash_timer = 0
 var motion = Vector2()
 var lado = true
@@ -122,8 +126,19 @@ func _physics_process(delta):
 		if get_slide_count() > 0:
 			for i in range(get_slide_count()):
 				if "Inimigo" in get_slide_collision(i).collider.name:
-					dead()
-		
+					hit()
+						
+						
+func hit():
+	if not invincible:
+		HP = HP-20
+		if HP == 0:
+			dead()
+		invincible = true
+		invincibleTimer = invincibleDuration
+		yield(get_tree().create_timer(1.0), "timeout")
+		invincible = false
+	
 func dead():
 	is_dead = true
 	motion = Vector2(0, 0)
@@ -136,5 +151,10 @@ func dead():
 	
 	pass
 
+func onInvincibleTimerTimeout():
+	invincible = false
+	
+	
+	
 func _on_Timer_timeout():
 	pass # Replace with function body.

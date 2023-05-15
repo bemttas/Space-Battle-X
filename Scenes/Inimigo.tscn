@@ -39,6 +39,7 @@ frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
 position = Vector2( -2.38419e-07, 8.5 )
 shape = SubResource( 2 )
 
