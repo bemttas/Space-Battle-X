@@ -49,7 +49,7 @@ func _physics_process(delta):
 				fire.global_position = $Position2D.global_position
 				
 		
-		if Input.is_action_just_pressed("dash") and (can_dash_in_air or is_on_floor()): # adiciona verificação de can_dash_in_air
+		if Input.is_action_just_pressed("dash") and not agachado and(can_dash_in_air or is_on_floor()): # adiciona verificação de can_dash_in_air
 			dash_timer = DASH_TIME
 		if dash_timer > 0:
 			isdash = true

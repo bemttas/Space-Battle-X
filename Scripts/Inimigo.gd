@@ -10,7 +10,7 @@ var velocity = Vector2()
 
 var is_dead = false
 
-const HP = 3
+var HP = 5
 
 var direction = 1
 
@@ -23,6 +23,12 @@ func dead():
 	$AnimatedSprite.play("dead")
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	$Timer.start()
+	
+func hit():
+	HP-=1
+	if HP <=0:
+		dead()
+		
 
 
 func _physics_process(delta):
