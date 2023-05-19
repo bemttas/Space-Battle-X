@@ -70,7 +70,7 @@ func _physics_process(delta):
 
 		
 		if isdash == false:
-			if Input.is_action_pressed("ui_right"):
+			if Input.is_action_pressed("ui_right") and not agachado:
 				motion.x += ACC
 				motion.x = min(motion.x+ACC, MAX_SPEED)
 				$Sprite.flip_h = false
@@ -79,7 +79,7 @@ func _physics_process(delta):
 				if sign($Position2D.position.x) == -1:
 					$Position2D.position.x *= -1
 				
-			elif Input.is_action_pressed("ui_left"):
+			elif Input.is_action_pressed("ui_left") and not agachado:
 				motion.x = max(motion.x-ACC, -MAX_SPEED)
 				$Sprite.flip_h = true
 				$Sprite.play("andar")
