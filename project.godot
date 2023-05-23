@@ -134,6 +134,7 @@ config/icon="res://Assets/Logo/icon.png"
 
 [autoload]
 
+Globals="*res://Scripts/globals.gd"
 Transicao="*res://Scenes/transicao.tscn"
 
 [display]
