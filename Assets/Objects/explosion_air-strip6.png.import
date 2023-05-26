@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vulture-idle3.png-9f73f79c1c21f5831be022a2c80d7d4e.stex"
+path="res://.import/explosion_air-strip6.png-cd0b70eb766a9c1bbf0d0bcfdb1ebe5e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Enemies/Sprites/Vulture-Idle/vulture-idle3.png"
-dest_files=[ "res://.import/vulture-idle3.png-9f73f79c1c21f5831be022a2c80d7d4e.stex" ]
+source_file="res://Assets/Objects/explosion_air-strip6.png"
+dest_files=[ "res://.import/explosion_air-strip6.png-cd0b70eb766a9c1bbf0d0bcfdb1ebe5e.stex" ]
 
 [params]
 

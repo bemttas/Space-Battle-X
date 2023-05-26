@@ -94,10 +94,10 @@ texture_progress = ExtResource( 18 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "andar"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -1, 4.5 )
 shape = SubResource( 12 )
 

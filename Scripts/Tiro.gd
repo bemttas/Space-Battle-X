@@ -27,8 +27,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Tiro_body_entered(body):
+	if "Slime" in body.name:
+		body.hit()
 	if "Inimigo" in body.name:
 		body.hit()
 	queue_free()
-	
-	pass # Replace with function body.
+pass # Replace with function body.

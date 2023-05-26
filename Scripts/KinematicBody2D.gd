@@ -13,6 +13,7 @@ var invincible = false
 var invincibleDuration = 1.0
 var invincibleTimer = 0.0
 
+
 const tiro = preload("res://Scenes/Tiro.tscn")
 var HP = 100.0
 var dash_timer = 0
@@ -24,7 +25,6 @@ var agachado = false
 var is_dead = false
 
 func _physics_process(delta):
-	
 	if is_dead == false:
 		
 		if not isdash:
@@ -40,6 +40,7 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("fire"):
 			if motion.y < 0 or motion.y > 0:
+				$tiro.play()
 				var fire = tiro.instance()
 				if sign ($Position2D.position.x) == 1:
 					fire.set_fireball_direction(1)
@@ -122,24 +123,15 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, UP)
 		pass
 		
-		if get_slide_count() > 0:
-			for i in range(get_slide_count()):
-				if "Inimigo" in get_slide_collision(i).collider.name:
-					hit()
-						
-						
 func hit():
+	motion = Vector2(0, 0)
+	$Sprite.play("dano")
 	if not invincible:
 		HP = HP-20
 		if HP == 0:
 			dead()
 		invincible = true
 		invincibleTimer = invincibleDuration
-		collision_layer = 2
-		collision_mask = 2
-		yield(get_tree().create_timer(1.0), "timeout")
-		collision_layer = 1
-		collision_mask = 1
 		yield(get_tree().create_timer(1.0), "timeout")
 		invincible = false
 	
@@ -161,4 +153,11 @@ func onInvincibleTimerTimeout():
 	
 	
 func _on_Timer_timeout():
+	pass
+
+
+func _on_Area2D_body_entered(body):
+	if "Inimigo" in body.name:
+		hit()
 	pass # Replace with function body.
+
