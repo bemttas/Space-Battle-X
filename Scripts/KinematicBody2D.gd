@@ -23,9 +23,10 @@ var isdash = false
 var can_dash_in_air = true
 var agachado = false
 var is_dead = false
+var hit = false
 
 func _physics_process(delta):
-	if is_dead == false:
+	if is_dead == false and hit == false:
 		
 		if not isdash:
 			motion.y += GRAVITY
@@ -34,7 +35,7 @@ func _physics_process(delta):
 		
 		var vif = false
 		
-		if position.y >= $Camera2D.limit_bottom + 10:
+		if position.y >= $Camera2D.limit_bottom + 15:
 			dead()
 		
 		
@@ -124,23 +125,28 @@ func _physics_process(delta):
 		pass
 		
 func hit():
-	motion = Vector2(0, 0)
-	$Sprite.play("dano")
 	if not invincible:
+		hit = true
 		HP = HP-20
+		$Sprite.play("dano")
+		yield(get_tree().create_timer(0.3), "timeout")
+		hit = false
 		if HP == 0:
 			dead()
-		invincible = true
-		invincibleTimer = invincibleDuration
-		yield(get_tree().create_timer(1.0), "timeout")
-		invincible = false
+		else:
+			invincible = true
+			invincibleTimer = invincibleDuration
+			yield(get_tree().create_timer(1.0), "timeout")
+			invincible = false
 	
 func dead():
 	is_dead = true
 	motion = Vector2(0, 0)
-	$Sprite.play("dano")
+	$Sprite.play("morte")
 	$CollisionShape2D.disabled = true
 	$Timer.start()
+	yield(get_tree().create_timer(0.5), "timeout")
+	get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
 	
 	get_tree().change_scene(("res://Scenes/World.tscn"))
@@ -149,8 +155,6 @@ func dead():
 
 func onInvincibleTimerTimeout():
 	invincible = false
-	
-	
 	
 func _on_Timer_timeout():
 	pass
