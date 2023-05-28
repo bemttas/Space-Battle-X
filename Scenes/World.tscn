@@ -672,7 +672,8 @@ limit_left = -482
 limit_top = -482
 limit_right = 3960
 limit_bottom = 186
-smoothing_speed = 7.0
+smoothing_enabled = true
+smoothing_speed = 10.0
 editor_draw_limits = true
 __meta__ = {
 "_editor_description_": ""

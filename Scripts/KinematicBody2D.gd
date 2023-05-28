@@ -111,7 +111,7 @@ func _physics_process(delta):
 					
 				if vif == true:
 					motion.x = lerp(motion.x,0,0.2)
-				can_dash_in_air = true # adiciona esta linha para reativar o dash no ar
+				can_dash_in_air = true
 				
 			else:
 				if motion.y < 0:
@@ -128,6 +128,7 @@ func hit():
 	if not invincible:
 		hit = true
 		HP = HP-20
+		motion.y = 0
 		$Sprite.play("dano")
 		yield(get_tree().create_timer(0.3), "timeout")
 		hit = false
