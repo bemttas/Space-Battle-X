@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Undertale Sound Effect - Attack Hit (128 kbps).mp3-d98fb880323f5439739d7b6dd688e6f6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Undertale Sound Effect - Attack Hit (128 kbps).mp3"
+dest_files=[ "res://.import/Undertale Sound Effect - Attack Hit (128 kbps).mp3-d98fb880323f5439739d7b6dd688e6f6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

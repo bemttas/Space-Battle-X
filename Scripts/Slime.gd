@@ -16,6 +16,7 @@ func _ready():
 	pass 
 
 func dead():
+	$hit.play()
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")

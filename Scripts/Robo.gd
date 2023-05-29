@@ -16,6 +16,7 @@ func _ready():
 	pass 
 
 func dead():
+	$hitt.play()
 	get_node("../../KinematicBody2D/Camera2D").shake()
 	is_dead = true
 	velocity = Vector2(0,0)

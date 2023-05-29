@@ -126,6 +126,8 @@ func _physics_process(delta):
 		
 func hit(Damage: int):
 	if not invincible:
+		$hit.play()
+		get_node("Camera2D").shakehit()
 		hit = true
 		HP = HP-Damage
 		motion.y = 0

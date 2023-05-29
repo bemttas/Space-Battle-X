@@ -27,6 +27,7 @@ func _change_direction():
 	direction *= -1
 
 func dead():
+	$hit.play()
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")

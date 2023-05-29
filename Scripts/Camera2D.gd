@@ -1,7 +1,7 @@
 extends Camera2D
 
-var shake_duration = 0.5  # Duração do tremor em segundos
-var shake_amplitude = 10  # Amplitude máxima do tremor em pixels
+var shake_duration = 0.2  # Duração do tremor em segundos
+var shake_amplitude = 2  # Amplitude máxima do tremor em pixels
 var shake_timer = 0.0
 var original_position = Vector2()
 
@@ -9,6 +9,14 @@ func _ready():
 	original_position = position
 
 func shake():
+	var shake_duration = 0.5  # Duração do tremor em segundos
+	var shake_amplitude = 10 # Amplitude máxima do tremor em pixels
+	original_position = position
+	shake_timer = shake_duration
+	
+func shakehit():
+	shake_duration = 0.2  # Duração do tremor em segundos
+	shake_amplitude = 2  # Amplitude máxima do tremor em pixels
 	original_position = position
 	shake_timer = shake_duration
 

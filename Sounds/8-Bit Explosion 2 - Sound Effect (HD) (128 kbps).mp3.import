@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/8-Bit Explosion 2 - Sound Effect (HD) (128 kbps).mp3-8f88d1e6dd170af6542cf7f53c5fe4a7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/8-Bit Explosion 2 - Sound Effect (HD) (128 kbps).mp3"
+dest_files=[ "res://.import/8-Bit Explosion 2 - Sound Effect (HD) (128 kbps).mp3-8f88d1e6dd170af6542cf7f53c5fe4a7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
