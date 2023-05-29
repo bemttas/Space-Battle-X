@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="VERSAO 3"
+config/name="ESSE MEMO"
 run/main_scene="res://Scenes/menu.tscn"
 config/icon="res://Assets/Logo/icon.png"
 
@@ -23,7 +23,6 @@ Transicao="*res://Scenes/transicao.tscn"
 
 window/size/width=1280
 window/size/height=720
-window/size/borderless=true
 
 [gui]
 

@@ -33,7 +33,7 @@ func loadsave():
 	if file.open_encrypted_with_pass(save_path, File.READ, "!@#$%¨*()_+123654789?     ...     By Bemttas&Martins") == OK:
 		var data = file.get_line()
 		file.close()
-		var json = JSON.parse(data)
+		var json = JSON.parse(data).result
 		lv1_enable = json["lv1_enable"]
 		lv2_enable = json["lv2_enable"]
 		lv3_enable = json["lv3_enable"]
@@ -53,9 +53,10 @@ func loadsave():
 
 # Create new data
 func createsave():
-	var directory = Directory.new()
-	if directory.dir_exists(save_path):
-		File.remove(save_path)
+	var save_file = File.new()
+	if save_file.file_exists(save_path):
+		var dir = Directory.new()
+		dir.remove(save_path)
 	var data = {
 		"lv1_enable": lv1_enable,
 		"lv2_enable": lv2_enable,
@@ -76,6 +77,6 @@ func createsave():
 	}
 	var json = JSON.print(data)
 	var file = File.new()
-	if file.open(save_path, File.WRITE) == OK:
+	if file.open_encrypted_with_pass(save_path, File.WRITE, "!@#$%¨*()_+123654789?     ...     By Bemttas&Martins") == OK:
 		file.store_string(json)
 		file.close()

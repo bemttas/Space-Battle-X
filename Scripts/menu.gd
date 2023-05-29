@@ -6,8 +6,8 @@ var exist_save = false
 # Init function
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	var directory = Directory.new()
-	if directory.dir_exists(Globals.save_path):
+	var save_file = File.new()
+	if save_file.file_exists(Globals.save_path):
 		exist_save = true
 		$VBoxContainer/Button.set("custom_colors/font_color_focus", Color(1,1,0,1))
 		$VBoxContainer/Button.set("custom_colors/font_color_hover", Color(1,1,0,1))
@@ -18,6 +18,7 @@ func _ready():
 		$VBoxContainer/Button.set("custom_colors/font_color_hover", Color(0.29,0.29,0,1))
 		$VBoxContainer/Button.set("custom_colors/font_color", Color(0.29,0.29,0.29,1))
 		$VBoxContainer/Button2.grab_focus()
+	print(Globals.save_path)
 
 func _on_Button_mouse_entered():
 	$VBoxContainer/Button2.release_focus()
@@ -33,7 +34,6 @@ func _on_Button_pressed():
 		Globals.loadsave()
 		$transition.get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
-		#mudar pra menu de fases
 		get_tree().change_scene(("res://Scenes/World.tscn"))
 
 func _on_Button2_mouse_entered():
@@ -47,8 +47,11 @@ func _on_Button2_mouse_exited():
 	$VBoxContainer/Button3.set_focus_mode(2)
 func _on_Button2_pressed():
 	if exist_save:
-		pass #menu de overwrite
+		$transition.get_node("ColorRect").get_node("animation").play("in")
+		yield(get_tree().create_timer(1.0), "timeout")
+		get_tree().change_scene(("res://Scenes/menu_overwrite.tscn"))
 	else:
+		Globals.createsave()
 		Globals.loadsave()
 		$transition.get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
@@ -66,6 +69,9 @@ func _on_Button3_mouse_exited():
 func _on_Button3_pressed():
 	$transition.get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
+	if exist_save:
+		var dir = Directory.new()
+		dir.remove(Globals.save_path)
 	get_tree().quit()
 
 func _process(delta):
