@@ -56,7 +56,7 @@ func _physics_process(delta):
 	
 func _on_Area2D_body_entered(body):
 	if "KinematicBody2D" in body.name:
-		body.hit()
+		body.hit(20)
 	pass # Replace with function body.
 
 

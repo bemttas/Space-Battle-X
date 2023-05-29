@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0009_Untitled-1111.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0005_1_0005_player_walking_2.png.png.png" type="Texture" id=2]
@@ -9,8 +9,8 @@
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0002_1_0002_player_stopped_1.png.png.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/KinematicBody2D.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Background/Rocky Pass Files/PNG/tileset.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Background/space.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Background/mont.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Background/mont.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Environments/alien-environment/PNG/layers/tileset.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Background/montt.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Objects/Pointer1.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Background/Rocky Pass Files/PNG/Props/plant-1.png" type="Texture" id=14]
@@ -28,7 +28,7 @@
 [ext_resource path="res://Scenes/transicao.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Sounds/Music/music bipedal mech/Bipedal Mech.mp3" type="AudioStream" id=27]
 [ext_resource path="res://Assets/Characters/PlayerOrange/dano.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Environments/alien-environment/PNG/layers/tileset.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Background/space.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1_0002_player_squatted_3.png.png" type="Texture" id=30]
 [ext_resource path="res://Assets/LifeBars/Vertical/Bars/Bar6.png" type="Texture" id=31]
 [ext_resource path="res://Assets/LifeBars/Vertical/Boarder/Boarder1.png" type="Texture" id=32]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Assets/Bullet/Mini_Effect_2D/Effect5.png" type="Texture" id=36]
 [ext_resource path="res://Assets/Background/Rocky Pass Files/PNG/near.png" type="Texture" id=37]
 [ext_resource path="res://Scenes/Robo.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=39]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 64, 0, 64, 0, 8, 16, 8 )
@@ -283,7 +284,7 @@ points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
 } ]
 9/z_index = 0
 10/name = "tileset.png 10"
-10/texture = ExtResource( 29 )
+10/texture = ExtResource( 11 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 32, 24, 64, 24 )
@@ -304,7 +305,7 @@ points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
 } ]
 10/z_index = 0
 11/name = "tileset.png 11"
-11/texture = ExtResource( 29 )
+11/texture = ExtResource( 11 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 112, 104, 96, 24 )
@@ -325,7 +326,7 @@ points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
 } ]
 11/z_index = 0
 12/name = "tileset.png 12"
-12/texture = ExtResource( 29 )
+12/texture = ExtResource( 11 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 112, 16, 96, 80 )
@@ -346,7 +347,7 @@ points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
 } ]
 12/z_index = 0
 13/name = "tileset.png 13"
-13/texture = ExtResource( 29 )
+13/texture = ExtResource( 11 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 32, 104, 64, 40 )
@@ -672,20 +673,21 @@ limit_left = -482
 limit_top = -482
 limit_right = 3960
 limit_bottom = 186
-smoothing_enabled = true
 smoothing_speed = 10.0
 editor_draw_limits = true
+script = ExtResource( 39 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
-animation = "morte"
-frame = 8
+animation = "andar"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+visible = false
 position = Vector2( -1, 4.5 )
 shape = SubResource( 12 )
 
@@ -708,7 +710,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 10 )
+texture = ExtResource( 29 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -723,7 +725,7 @@ __meta__ = {
 [node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
 position = Vector2( 542, 56 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }

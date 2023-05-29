@@ -124,15 +124,15 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, UP)
 		pass
 		
-func hit():
+func hit(Damage: int):
 	if not invincible:
 		hit = true
-		HP = HP-20
+		HP = HP-Damage
 		motion.y = 0
 		$Sprite.play("dano")
 		yield(get_tree().create_timer(0.3), "timeout")
 		hit = false
-		if HP == 0:
+		if HP <= 0:
 			dead()
 		else:
 			invincible = true
@@ -159,10 +159,4 @@ func onInvincibleTimerTimeout():
 	
 func _on_Timer_timeout():
 	pass
-
-
-func _on_Area2D_body_entered(body):
-	if "Inimigo" in body.name:
-		hit()
-	pass # Replace with function body.
 

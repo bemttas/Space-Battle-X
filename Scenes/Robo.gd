@@ -16,6 +16,7 @@ func _ready():
 	pass 
 
 func dead():
+	get_node("../../KinematicBody2D/Camera2D").shake()
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")
@@ -59,7 +60,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if "KinematicBody2D" in body.name:
-		body.hit()
+		body.hit(40)
 	pass # Replace with function body.
 	
 func _on_Timer_timeout():
