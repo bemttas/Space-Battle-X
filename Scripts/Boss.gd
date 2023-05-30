@@ -35,6 +35,8 @@ func hit():
 func _physics_process(delta):
 	if get_node("../../KinematicBody2D").position.x > 3992:
 		$BOSSHUD.visible = true
+	else:
+		$BOSSHUD.visible = false
 	if is_dead == false:
 		velocity.x = SPEED * direction
 		

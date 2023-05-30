@@ -4,7 +4,10 @@ var shake_duration = 0.2  # Duração do tremor em segundos
 var shake_amplitude = 2  # Amplitude máxima do tremor em pixels
 var shake_timer = 0.0
 var original_position = Vector2()
-
+var targetZoom = Vector2(0.5, 0.5)
+var zoomDuration = 10.0
+var currentZoom = Vector2(0.33, 0.33)
+var zoomTimer = 0.0
 func _ready():
 	original_position = position
 
@@ -22,9 +25,13 @@ func shakehit():
 
 func _process(delta):
 	if get_node("../../KinematicBody2D").position.x > 3992:
-		zoom.x = 0.5
-		zoom.y = 0.5
+		if zoomTimer < zoomDuration:
+			zoomTimer += delta
+			var t = zoomTimer / zoomDuration
+			currentZoom = currentZoom.linear_interpolate(targetZoom, t)
+			zoom = currentZoom
 		limit_bottom = 10
+		limit_left = 3786
 	if shake_timer > 0:
 		shake_timer -= delta
 		if shake_timer <= 0:
