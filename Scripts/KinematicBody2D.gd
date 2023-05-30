@@ -26,6 +26,7 @@ var is_dead = false
 var hit = false
 
 func _physics_process(delta):
+	print(position)
 	if is_dead == false and hit == false:
 		
 		if not isdash:

@@ -31,5 +31,7 @@ func _on_Tiro_body_entered(body):
 		body.hit()
 	if "Inimigo" in body.name:
 		body.hit()
+	if "Boss" in body.name:
+		body.hit()
 	queue_free()
 pass # Replace with function body.

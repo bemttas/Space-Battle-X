@@ -13,6 +13,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var kinematicBody = get_node("../../KinematicBody2D")
+	var kinematicBody = get_node("../../../Boss")
 	var hp = kinematicBody.HP
 	value = hp
