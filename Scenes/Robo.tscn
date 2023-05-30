@@ -101,14 +101,14 @@ extents = Vector2( 23, 32 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23.25, 32 )
 
-[node name="Inimigo" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 2
+[node name="Robo" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

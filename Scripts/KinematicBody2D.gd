@@ -139,7 +139,11 @@ func hit(Damage: int):
 		else:
 			invincible = true
 			invincibleTimer = invincibleDuration
+			collision_layer=2
+			collision_mask=2
 			yield(get_tree().create_timer(1.0), "timeout")
+			collision_layer=1
+			collision_layer=1
 			invincible = false
 	
 func dead():
