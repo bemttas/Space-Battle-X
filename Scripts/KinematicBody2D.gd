@@ -95,19 +95,19 @@ func _physics_process(delta):
 				motion.x = lerp(motion.x, 0,0.2)
 				
 			if is_on_floor():
+				$CollisionShape2D.disabled = false
+				$CollisionShapeAgachado.disabled = true
+				agachado = false
 				$Position2D.position.y = -2
-				if Input.is_action_pressed("ui_down"):
-					agachado = true
-					
-				if Input.is_action_just_released("ui_down"):
-					agachado = false
-					
-				if agachado == true:
-					$Sprite.play("agachado")
-					$Position2D.position.y = 9
-					
 				if Input.is_action_just_pressed("ui_up"):
 					motion.y = JUMP_HEIGHT
+				
+				if Input.is_action_pressed("ui_down"):
+					agachado = true
+					$CollisionShape2D.disabled = true
+					$CollisionShapeAgachado.disabled = false
+					$Sprite.play("agachado")
+					$Position2D.position.y = 9
 					
 				if vif == true:
 					motion.x = lerp(motion.x,0,0.2)

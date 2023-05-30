@@ -449,10 +449,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 12.5, 13.5 )
+extents = Vector2( 11.125, 13.5 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 11, 20.5 )
+extents = Vector2( 8, 20 )
 
 [node name="World" type="Node"]
 
@@ -687,18 +687,17 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
-frame = 1
 playing = true
 
 [node name="CollisionShapeAgachado" type="CollisionShape2D" parent="KinematicBody2D"]
 visible = false
-position = Vector2( -0.5, 11.5 )
+position = Vector2( -0.875, 11.5 )
 shape = SubResource( 30 )
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 visible = false
-position = Vector2( -1, 4.5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 12 )
 
 [node name="Position2D" type="Position2D" parent="KinematicBody2D"]
@@ -793,7 +792,7 @@ position = Vector2( 1779, -18 )
 position = Vector2( 1279, -64 )
 
 [node name="Inimigo2" parent="Inimigos" instance=ExtResource( 25 )]
-position = Vector2( 857, -52 )
+position = Vector2( 776, -46 )
 
 [node name="Inimigo3" parent="Inimigos" instance=ExtResource( 38 )]
 position = Vector2( 3351, 14 )
