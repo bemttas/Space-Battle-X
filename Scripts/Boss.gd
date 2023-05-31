@@ -8,22 +8,33 @@ const FLOOR = Vector2(0, -1)
 var velocity = Vector2()
 var is_dead = false
 
-var HP = 100
 
+onready var player = get_node("../../KinematicBody2D")
+onready var fire = preload("res://Scenes/Fire.tscn")
+
+export var fireballSpeed = 200  # Velocidade da bola de fogo
+export var fireRate = 2  # Taxa de disparo em segundos
+
+var fireTimer = 0
+var HP = 10
+var fireballSpawnPoints = []
 var direction = -1
 
 func _ready():
+	fireballSpawnPoints.append($FireBall1)
+	fireballSpawnPoints.append($FireBall2)
 	pass 
 
 func dead():
 	$hitt.play()
-	get_node("../../KinematicBody2D/Camera2D").shake()
+	get_node("../../KinematicBody2D/Camera2D").shakehigh()
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	$Area2D/CollisionShape2D.call_deferred("set_disabled", true)
 	$Timer.start()
+	$BOSSHUD.visible = false
 	
 func hit():
 	HP-=1
@@ -33,32 +44,40 @@ func hit():
 		
 		
 func _physics_process(delta):
-	if get_node("../../KinematicBody2D").position.x > 3992:
+	if player.position.x > 3992:
 		$BOSSHUD.visible = true
-	else:
-		$BOSSHUD.visible = false
-	if is_dead == false:
-		velocity.x = SPEED * direction
 		
-		if direction == 1:
-			$AnimatedSprite.flip_h = false
-		else:
-			$AnimatedSprite.flip_h = true
+		if is_dead == false:
+			velocity.x = SPEED * direction
 			
-		$AnimatedSprite.play("default")
-		
-		velocity.y += GRAVITY
-		
-		velocity = move_and_slide(velocity, FLOOR)
-		
-		
-		
-		if $RayCast2D.is_colliding() == false:
-			direction *= -1
-			$RayCast2D.position.x *= -1
+			if direction == 1:
+				$AnimatedSprite.flip_h = true
+			else:
+				$AnimatedSprite.flip_h = false
+				
+			$AnimatedSprite.play("andando")
 			
+			velocity.y += GRAVITY
 			
+			velocity = move_and_slide(velocity, FLOOR)
+		fireTimer += delta
+
+		if fireTimer >= fireRate:
+			fireTimer = 0
+			shoot_fireball()
 			
+func shoot_fireball():
+	for spawnPoint in fireballSpawnPoints:
+		var direction = (player.global_position - spawnPoint.global_position).normalized()
+		var fireballInstance = fire.instance()
+
+		fireballInstance.global_position = spawnPoint.global_position
+		fireballInstance.linear_velocity = direction * fireballSpeed
+
+		get_parent().add_child(fireballInstance)
+
+
+
 
 
 func _on_Area2D_body_entered(body):

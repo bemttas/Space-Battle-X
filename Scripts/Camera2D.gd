@@ -17,6 +17,12 @@ func shake():
 	original_position = position
 	shake_timer = shake_duration
 	
+func shakehigh():
+	var shake_duration = 1.0  # Duração do tremor em segundos
+	var shake_amplitude = 20 # Amplitude máxima do tremor em pixels
+	original_position = position
+	shake_timer = shake_duration
+	
 func shakehit():        
 	shake_duration = 0.2 # Duração do tremor em segundos
 	shake_amplitude = 2  # Amplitude máxima do tremor em pixels
@@ -30,7 +36,6 @@ func _process(delta):
 			var t = zoomTimer / zoomDuration
 			currentZoom = currentZoom.linear_interpolate(targetZoom, t)
 			zoom = currentZoom
-		limit_bottom = 10
 		limit_left = 3786
 	if shake_timer > 0:
 		shake_timer -= delta

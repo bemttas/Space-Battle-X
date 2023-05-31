@@ -1,136 +1,121 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=61 format=2]
 
-[ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/mech-unit/spritesheet/mech-unit.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_21.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/Explosion/spritesheet/explosion-animation.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_22.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/8-Bit Explosion 2 - Sound Effect (HD) (128 kbps).mp3" type="AudioStream" id=4]
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 3 )
-region = Rect2( 112, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 3 )
-region = Rect2( 224, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 3 )
-region = Rect2( 336, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 3 )
-region = Rect2( 448, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 3 )
-region = Rect2( 560, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 3 )
-region = Rect2( 672, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 3 )
-region = Rect2( 784, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 3 )
-region = Rect2( 896, 0, 112, 128 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 288, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 384, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
-region = Rect2( 480, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 576, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
-region = Rect2( 672, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 768, 0, 96, 80 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 864, 0, 96, 80 )
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_9.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_10.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_20.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_18.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_5.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_6.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_7.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_8.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_11.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_12.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_13.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_14.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_15.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_16.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_17.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_1.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_4.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_5.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_6.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/05_demon_death/demon_death_19.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_6.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_2.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_10.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_8.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_9.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_3.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_11.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_12.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_1.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_4.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_7.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_5.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_15.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_11.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_1.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_3.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_4.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_6.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_13.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_8.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_12.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_2.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_7.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_14.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_9.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_5.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/individual sprites/03_demon_cleave/demon_cleave_10.png" type="Texture" id=57]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), null ],
+"frames": [ ExtResource( 39 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 41 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "andando",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 52 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 53 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 44 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 54 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "ataque",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 11 ), ExtResource( 30 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), null ],
 "loop": false,
 "name": "dead",
-"speed": 12.0
+"speed": 10.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": true,
-"name": "default",
-"speed": 2.0
+"name": "idle",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 13.1, 32 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16.75, 23.75 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 14.2, 32 )
+extents = Vector2( 14.55, 22.5 )
 
 [node name="Boss" type="KinematicBody2D"]
-scale = Vector2( 5, 5 )
+scale = Vector2( 4, 4 )
 collision_layer = 4
 collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4.4, -15.8 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
-frame = 5
+animation = "andando"
+frame = 2
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.7, 8 )
-shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.75, 15.75 )
+shape = SubResource( 4 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 11.2, 21.2 )
-enabled = true
-cast_to = Vector2( 0, 25.236 )
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -3.6, 8 )
-scale = Vector2( 1, 1 )
+position = Vector2( -3.95, 16.75 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
@@ -139,6 +124,13 @@ __meta__ = {
 [node name="hitt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -4.602
+
+[node name="FireBall1" type="Position2D" parent="."]
+position = Vector2( -25.5, -12.75 )
+rotation = 0.00829315
+
+[node name="FireBall2" type="Position2D" parent="."]
+position = Vector2( 5.75, -13.75 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
