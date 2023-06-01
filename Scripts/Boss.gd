@@ -15,6 +15,9 @@ onready var fire = preload("res://Scenes/Fire.tscn")
 export var fireballSpeed = 200  # Velocidade da bola de fogo
 export var fireRate = 2  # Taxa de disparo em segundos
 
+const STEP_DISTANCE = 100
+var stepCounter = 4
+
 var fireTimer = 0
 var HP = 10
 var fireballSpawnPoints = []
@@ -46,25 +49,36 @@ func hit():
 func _physics_process(delta):
 	if player.position.x > 3992:
 		$BOSSHUD.visible = true
-		
+
 		if is_dead == false:
-			velocity.x = SPEED * direction
-			
-			if direction == 1:
-				$AnimatedSprite.flip_h = true
-			else:
-				$AnimatedSprite.flip_h = false
+			if stepCounter < STEP_DISTANCE:
+				var collision = move_and_collide(velocity * delta)
 				
-			$AnimatedSprite.play("andando")
-			
-			velocity.y += GRAVITY
-			
-			velocity = move_and_slide(velocity, FLOOR)
+				if collision:
+					direction *= -1  # Inverte a direção se houver colisão com uma parede
+				
+				velocity.x = SPEED * direction
+				
+				if direction == 1:
+					$AnimatedSprite.flip_h = true
+				else:
+					$AnimatedSprite.flip_h = false
+					
+				$AnimatedSprite.play("andando")
+				
+				velocity.y += GRAVITY
+				
+				velocity = move_and_slide(velocity, FLOOR)
+				
+				stepCounter += abs(velocity.x) * delta
+			else:
+				stepCounter = 0
+				
 		fireTimer += delta
 
-		if fireTimer >= fireRate:
-			fireTimer = 0
-			shoot_fireball()
+	if fireTimer >= fireRate:
+		fireTimer = 0
+		shoot_fireball()
 			
 func shoot_fireball():
 	for spawnPoint in fireballSpawnPoints:
