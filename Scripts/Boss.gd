@@ -90,10 +90,6 @@ func shoot_fireball():
 
 		get_parent().add_child(fireballInstance)
 
-
-
-
-
 func _on_Area2D_body_entered(body):
 	if "KinematicBody2D" in body.name:
 		body.hit(40)
