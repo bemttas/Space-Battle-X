@@ -19,7 +19,7 @@ const STEP_DISTANCE = 100
 var stepCounter = 4
 
 var fireTimer = 0
-var HP = 100
+var HP = 10
 var fireballSpawnPoints = []
 var direction = -1
 
@@ -38,6 +38,16 @@ func dead():
 	$Area2D/CollisionShape2D.call_deferred("set_disabled", true)
 	$Timer.start()
 	$BOSSHUD.visible = false
+	#yield(get_tree().create_timer(1.0), "timeout")
+	get_node("../../transition").get_node("ColorRect").get_node("animation").play("in")
+	yield(get_tree().create_timer(1.0), "timeout")
+	var save_file = File.new()
+	if save_file.file_exists(Globals.save_path):
+		Globals.createsave()
+		get_tree().change_scene(("res://Scenes/menu_level.tscn"))
+	else:
+		get_tree().change_scene(("res://Scenes/menu_name.tscn"))
+	
 	
 func hit():
 	HP-=1
@@ -74,11 +84,11 @@ func _physics_process(delta):
 			else:
 				stepCounter = 0
 				
-		fireTimer += delta
+			fireTimer += delta
 
-	if fireTimer >= fireRate:
-		fireTimer = 0
-		shoot_fireball()
+			if fireTimer >= fireRate:
+				fireTimer = 0
+				shoot_fireball()
 			
 func shoot_fireball():
 	for spawnPoint in fireballSpawnPoints:

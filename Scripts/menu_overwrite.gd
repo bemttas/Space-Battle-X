@@ -17,7 +17,9 @@ func _on_Button_mouse_exited():
 
 
 func _on_Button2_pressed():
-	Globals.createsave()
+	
+	var dir = Directory.new()
+	dir.remove(Globals.save_path)
 	$transition.get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().change_scene(("res://Scenes/World.tscn"))

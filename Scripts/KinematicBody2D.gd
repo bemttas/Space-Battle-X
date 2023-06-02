@@ -13,7 +13,6 @@ var invincible = false
 var invincibleDuration = 1.0
 var invincibleTimer = 0.0
 
-
 const tiro = preload("res://Scenes/Tiro.tscn")
 var HP = 100.0
 var dash_timer = 0
