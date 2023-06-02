@@ -85,9 +85,8 @@ flat = true
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
 margin_left = 966.0
-margin_top = 46.0
 margin_right = 1138.0
-margin_bottom = 78.0
+margin_bottom = 125.0
 focus_neighbour_left = NodePath("../Button")
 focus_neighbour_right = NodePath("../Button")
 focus_next = NodePath("../Button")

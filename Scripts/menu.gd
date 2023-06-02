@@ -34,7 +34,7 @@ func _on_Button_pressed():
 		Globals.loadsave()
 		$transition.get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
-		get_tree().change_scene(("res://Scenes/World.tscn"))
+		get_tree().change_scene(("res://Scenes/menu_level.tscn"))
 
 func _on_Button2_mouse_entered():
 	$VBoxContainer/Button.release_focus()
@@ -51,8 +51,6 @@ func _on_Button2_pressed():
 		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene(("res://Scenes/menu_overwrite.tscn"))
 	else:
-		Globals.createsave()
-		Globals.loadsave()
 		$transition.get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene(("res://Scenes/World.tscn"))
