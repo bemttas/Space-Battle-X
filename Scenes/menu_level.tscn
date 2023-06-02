@@ -239,8 +239,10 @@ pitch_scale = 0.86
 autoplay = true
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_right = 529.0
-margin_bottom = 86.0
+margin_left = 16.0
+margin_top = 12.0
+margin_right = 545.0
+margin_bottom = 98.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
