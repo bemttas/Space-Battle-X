@@ -5,7 +5,7 @@ var shake_amplitude = 2  # Amplitude máxima do tremor em pixels
 var shake_timer = 0.0
 var original_position = Vector2()
 var targetZoom = Vector2(0.5, 0.5)
-var zoomDuration = 10.0
+var zoomDuration = 20.0
 var currentZoom = Vector2(0.33, 0.33)
 var zoomTimer = 0.0
 func _ready():
