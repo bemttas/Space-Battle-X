@@ -538,7 +538,7 @@ position = Vector2( 3781, -346 )
 texture = ExtResource( 13 )
 
 [node name="Sprite6" type="Sprite" parent="Objetos"]
-position = Vector2( -200, 85 )
+position = Vector2( 174, 52 )
 texture = ExtResource( 13 )
 
 [node name="Sprite5" type="Sprite" parent="Objetos"]
@@ -740,11 +740,11 @@ position = Vector2( 651, 155 )
 texture = ExtResource( 14 )
 
 [node name="Plant-2" type="Sprite" parent="Objetos"]
-position = Vector2( -228, 90 )
+position = Vector2( -235, 90 )
 texture = ExtResource( 14 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( 3568, -57 )
+position = Vector2( -205, 71 )
 script = ExtResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]

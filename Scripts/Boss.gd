@@ -19,7 +19,7 @@ const STEP_DISTANCE = 100
 var stepCounter = 4
 
 var fireTimer = 0
-var HP = 10
+var HP = 100
 var fireballSpawnPoints = []
 var direction = -1
 
