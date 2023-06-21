@@ -744,7 +744,7 @@ position = Vector2( -235, 90 )
 texture = ExtResource( 14 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( -205, 71 )
+position = Vector2( -211, 39 )
 script = ExtResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]

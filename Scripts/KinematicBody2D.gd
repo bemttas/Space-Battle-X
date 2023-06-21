@@ -9,6 +9,9 @@ const DASH_TIME = 0.3
 const MAX_SPEED = 200
 const ACC = 50
 
+var blink_time = 0.3
+var blink_timer = 0.0
+
 var invincible = false
 var invincibleDuration = 1.0
 var invincibleTimer = 0.0
@@ -25,6 +28,15 @@ var is_dead = false
 var hit = false
 
 func _physics_process(delta):
+	modulate.a = 1.0
+	if invincible == true:
+		blink_timer += delta
+		var blink_mod = fmod(blink_timer, blink_time)
+		if blink_mod < blink_time / 2:
+			modulate.a = 1.0
+		else:
+			modulate.a = 0.6
+		
 	print(position)
 	if is_dead == false and hit == false:
 		
