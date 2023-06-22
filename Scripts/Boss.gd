@@ -19,7 +19,7 @@ const STEP_DISTANCE = 100
 var stepCounter = 4
 
 var fireTimer = 0
-var HP = 100
+var HP = 10
 var fireballSpawnPoints = []
 var direction = -1
 
@@ -31,6 +31,7 @@ func _ready():
 func dead():
 	$hitt.play()
 	get_node("../../KinematicBody2D/Camera2D").shakehigh()
+	get_node("../../KinematicBody2D").boss_dead = true
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")
@@ -38,22 +39,15 @@ func dead():
 	$Area2D/CollisionShape2D.call_deferred("set_disabled", true)
 	$Timer.start()
 	$BOSSHUD.visible = false
-	#yield(get_tree().create_timer(1.0), "timeout")
-	get_node("../../transition").get_node("ColorRect").get_node("animation").play("in")
-	yield(get_tree().create_timer(1.0), "timeout")
-	var save_file = File.new()
-	if save_file.file_exists(Globals.save_path):
-		Globals.createsave()
-		get_tree().change_scene(("res://Scenes/menu_level.tscn"))
-	else:
-		get_tree().change_scene(("res://Scenes/menu_name.tscn"))
 	
 	
 func hit():
+	$AnimatedSprite.modulate.a = 0.5
 	HP-=1
 	if HP <=0:
 		dead()
-		
+	yield(get_tree().create_timer(0.05), "timeout")
+	$AnimatedSprite.modulate.a = 1.0
 		
 		
 func _physics_process(delta):

@@ -26,13 +26,13 @@ func dead():
 	$Timer.start()
 	
 func hit():
-	modulate.a = 0.7
+	$AnimatedSprite.modulate.a = 0.5
 	$TextureProgress.value -= 10
 	HP-=1
 	if HP <=0:
 		dead()
-	yield(get_tree().create_timer(0.1), "timeout")
-	modulate.a = 1.0
+	yield(get_tree().create_timer(0.05), "timeout")
+	$AnimatedSprite.modulate.a = 1.0
 		
 func _physics_process(delta):
 	if is_dead == false:

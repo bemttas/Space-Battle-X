@@ -8,7 +8,7 @@ const DASH_SPEED = 350
 const DASH_TIME = 0.3
 const MAX_SPEED = 200
 const ACC = 50
-
+var boss_dead = false
 var blink_time = 0.3
 var blink_timer = 0.0
 
@@ -28,6 +28,20 @@ var is_dead = false
 var hit = false
 
 func _physics_process(delta):
+			
+	if boss_dead == true:
+		yield(get_tree().create_timer(3.0), "timeout")
+		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
+		yield(get_tree().create_timer(1.0), "timeout")
+		var save_file = File.new()
+		if save_file.file_exists(Globals.save_path):
+			Globals.createsave()
+			get_tree().change_scene(("res://Scenes/menu_level.tscn"))
+		else:
+			get_tree().change_scene(("res://Scenes/menu_name.tscn"))
+	
+	
+	
 	modulate.a = 1.0
 	if invincible == true:
 		blink_timer += delta
@@ -38,7 +52,7 @@ func _physics_process(delta):
 			modulate.a = 0.6
 		
 	print(position)
-	if is_dead == false and hit == false:
+	if is_dead == false and hit == false and boss_dead == false:
 		
 		if not isdash:
 			motion.y += GRAVITY

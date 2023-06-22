@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0009_Untitled-1111.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0005_1_0005_player_walking_2.png.png.png" type="Texture" id=2]
@@ -46,6 +46,8 @@
 [ext_resource path="res://Assets/LifeBars/Vertical/Backs/Back6.png" type="Texture" id=44]
 [ext_resource path="res://Fonts/poco/Poco.tres" type="DynamicFont" id=45]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=46]
+[ext_resource path="res://Assets/Background/Gerald's Keys/Keys/Z-Key.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Background/Gerald's Keys/Keys/X-Key.png" type="Texture" id=48]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 64, 0, 64, 0, 8, 16, 8 )
@@ -375,6 +377,38 @@ points = PoolVector2Array( 16, 32, 0, 32, 0, 0, 16, 0 )
 } ]
 13/z_index = 0
 
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 48 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 47 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 36 )
 region = Rect2( 0, 0, 48, 48 )
@@ -516,6 +550,36 @@ tile_data = PoolIntArray( -1376021, 0, 0, -1376020, 1, 0, -1376018, 1, 0, -13760
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Label" type="Label" parent="Objetos"]
+margin_left = -274.0
+margin_top = 7.0
+margin_right = -206.0
+margin_bottom = 39.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 45 )
+text = "FIRE"
+
+[node name="Label2" type="Label" parent="Objetos"]
+margin_left = -274.0
+margin_top = 25.0
+margin_right = -206.0
+margin_bottom = 57.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 45 )
+text = "DASH"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Objetos"]
+position = Vector2( -227, 14 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 33 )
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Objetos"]
+position = Vector2( -222, 32 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 36 )
+playing = true
 
 [node name="Sprite3" type="Sprite" parent="Objetos"]
 position = Vector2( -50, -99 )
@@ -744,10 +808,11 @@ position = Vector2( -235, 90 )
 texture = ExtResource( 14 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( -211, 39 )
+position = Vector2( -212, 75 )
 script = ExtResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+visible = false
 current = true
 zoom = Vector2( 0.33, 0.33 )
 limit_left = -482
@@ -757,6 +822,7 @@ limit_bottom = 186
 editor_draw_limits = true
 script = ExtResource( 39 )
 __meta__ = {
+"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -764,18 +830,33 @@ __meta__ = {
 frames = SubResource( 1 )
 animation = "parado"
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShapeAgachado" type="CollisionShape2D" parent="KinematicBody2D"]
+visible = false
 position = Vector2( -0.875, 11.5 )
 shape = SubResource( 30 )
 disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+visible = false
 position = Vector2( 0, 5 )
 shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Position2D" type="Position2D" parent="KinematicBody2D"]
+visible = false
 position = Vector2( 27, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Timer" type="Timer" parent="KinematicBody2D"]
 one_shot = true
@@ -783,6 +864,9 @@ one_shot = true
 [node name="tiro" type="AudioStreamPlayer2D" parent="KinematicBody2D"]
 visible = false
 stream = ExtResource( 35 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="hit" type="AudioStreamPlayer" parent="KinematicBody2D"]
 stream = ExtResource( 40 )
