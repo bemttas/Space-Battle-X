@@ -41,9 +41,9 @@ func _physics_process(delta):
 		velocity.x = SPEED * direction
 		
 		if direction == 1:
-			$AnimatedSprite.flip_h = true
-		else:
 			$AnimatedSprite.flip_h = false
+		else:
+			$AnimatedSprite.flip_h = true
 			
 		$AnimatedSprite.play("default")
 		
@@ -51,21 +51,20 @@ func _physics_process(delta):
 		
 		velocity = move_and_slide(velocity, FLOOR)
 		
-		
+		if is_on_wall():
+			direction *= 1
 		
 		if $RayCast2D.is_colliding() == false:
 			direction *= -1
 			$RayCast2D.position.x *= -1
 			
-		if is_on_floor() and is_on_wall():
-			direction *= -1
 			
 			
 
 
 func _on_Area2D_body_entered(body):
 	if "KinematicBody2D" in body.name:
-		body.hit(10)
+		body.hit(30)
 	pass # Replace with function body.
 	
 func _on_Timer_timeout():

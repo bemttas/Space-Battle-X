@@ -16,6 +16,8 @@ var invincible = false
 var invincibleDuration = 1.0
 var invincibleTimer = 0.0
 
+
+
 const tiro = preload("res://Scenes/Tiro.tscn")
 var HP = 100.0
 var dash_timer = 0
@@ -28,7 +30,8 @@ var is_dead = false
 var hit = false
 
 func _physics_process(delta):
-			
+	Globals.player_position = position
+	
 	if boss_dead == true:
 		yield(get_tree().create_timer(3.0), "timeout")
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")

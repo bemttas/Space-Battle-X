@@ -6,6 +6,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Respawn variables
 var respawn_point
 
+var player_position
+
 # Game variables
 var lv1_enable = true
 var lv2_enable = false

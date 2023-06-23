@@ -52,13 +52,20 @@ func _physics_process(delta):
 		velocity = move_and_slide(velocity, FLOOR)
 		
 		
+		if Globals.player_position.x > position.x:
+			yield(get_tree().create_timer(0.5), "timeout")
+			direction = 1
+		else:
+			yield(get_tree().create_timer(0.5), "timeout")
+			direction = -1
+		
+		
 		
 		if $RayCast2D.is_colliding() == false:
+			yield(get_tree().create_timer(0.5), "timeout")
 			direction *= -1
 			$RayCast2D.position.x *= -1
 			
-		if is_on_floor() and is_on_wall():
-			direction *= -1
 			
 			
 
