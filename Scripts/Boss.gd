@@ -40,6 +40,7 @@ func dead():
 	$Timer.start()
 	Globals.lv2_enable = true
 	$BOSSHUD.visible = false
+	Globals.boss1_died = true
 	
 	
 func hit():
