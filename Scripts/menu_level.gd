@@ -21,8 +21,6 @@ func _on_Button5_mouse_entered():
 	$HBoxContainer/Button.set_focus_mode(0)
 	$HBoxContainer/Button2.release_focus()
 	$HBoxContainer/Button2.set_focus_mode(0)
-	$HBoxContainer/Button3.release_focus()
-	$HBoxContainer/Button3.set_focus_mode(0)
 	$HBoxContainer2/Button5.grab_focus()
 func _on_Button5_mouse_exited():
 	$HBoxContainer2/Button4.set_focus_mode(2)
@@ -40,14 +38,11 @@ func _on_Button4_mouse_entered():
 	$HBoxContainer/Button.set_focus_mode(0)
 	$HBoxContainer/Button2.release_focus()
 	$HBoxContainer/Button2.set_focus_mode(0)
-	$HBoxContainer/Button3.release_focus()
-	$HBoxContainer/Button3.set_focus_mode(0)
 	$HBoxContainer2/Button4.grab_focus()
 func _on_Button4_mouse_exited():
 	$HBoxContainer2/Button5.set_focus_mode(2)
 	$HBoxContainer/Button.set_focus_mode(2)
 	$HBoxContainer/Button2.set_focus_mode(2)
-	$HBoxContainer/Button3.set_focus_mode(2)
 func _on_Button4_pressed():
 	$transition.get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
@@ -62,13 +57,11 @@ func _on_Button_mouse_entered():
 	$HBoxContainer/Button2.release_focus()
 	$HBoxContainer/Button2.set_focus_mode(0)
 	$HBoxContainer/Button3.release_focus()
-	$HBoxContainer/Button3.set_focus_mode(0)
 	$HBoxContainer/Button.grab_focus()
 func _on_Button_mouse_exited():
 	$HBoxContainer2/Button4.set_focus_mode(2)
 	$HBoxContainer2/Button5.set_focus_mode(2)
 	$HBoxContainer/Button2.set_focus_mode(2)
-	$HBoxContainer/Button3.set_focus_mode(2)
 func _on_Button_pressed():
 	$transition.get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
