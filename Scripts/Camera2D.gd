@@ -8,6 +8,10 @@ var targetZoom = Vector2(0.5, 0.5)
 var zoomDuration = 20.0
 var currentZoom = Vector2(0.33, 0.33)
 var zoomTimer = 0.0
+var isZoomingOut = false
+
+var originalzoom = Vector2(0.33, 0.33)
+
 func _ready():
 	original_position = position
 
@@ -31,16 +35,23 @@ func shakehit():
 
 func _process(delta):
 	if get_node("../../KinematicBody2D").position.x > 3992:
-		if zoomTimer < zoomDuration:
-			zoomTimer += delta
-			var t = zoomTimer / zoomDuration
-			currentZoom = currentZoom.linear_interpolate(targetZoom, t)
-			zoom = currentZoom
+		if not isZoomingOut:
+			isZoomingOut = true
+			zoomTimer = 0.0
+			currentZoom = originalzoom
+		else:
+			if zoomTimer < zoomDuration:
+				zoomTimer += delta
+				var t = zoomTimer / zoomDuration
+				currentZoom = currentZoom.linear_interpolate(targetZoom, t)
+				zoom = currentZoom
 		limit_left = 3786
 	else:
+		isZoomingOut = false
 		limit_left = -482
-		zoom.x = 0.33
-		zoom.y = 0.33
+		zoom = originalzoom
+		
+		
 	if shake_timer > 0:
 		shake_timer -= delta
 		if shake_timer <= 0:
