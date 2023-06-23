@@ -26,7 +26,6 @@ func _on_Button5_mouse_exited():
 	$HBoxContainer2/Button4.set_focus_mode(2)
 	$HBoxContainer/Button.set_focus_mode(2)
 	$HBoxContainer/Button2.set_focus_mode(2)
-	$HBoxContainer/Button3.set_focus_mode(2)
 func _on_Button5_pressed():
 	pass
 
@@ -56,7 +55,6 @@ func _on_Button_mouse_entered():
 	$HBoxContainer2/Button5.set_focus_mode(0)
 	$HBoxContainer/Button2.release_focus()
 	$HBoxContainer/Button2.set_focus_mode(0)
-	$HBoxContainer/Button3.release_focus()
 	$HBoxContainer/Button.grab_focus()
 func _on_Button_mouse_exited():
 	$HBoxContainer2/Button4.set_focus_mode(2)
