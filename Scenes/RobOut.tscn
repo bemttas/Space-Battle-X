@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/Explosion/sprites/explosion-animation5.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/Explosion/sprites/explosion-animation4.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Bullet/Mini_Effect_2D/Effect3.png" type="Texture" id=10]
-[ext_resource path="res://Sounds/Undertale Sound Effect - Attack Hit (128 kbps).mp3" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/8-Bit Explosion 2 - Sound Effect (HD) (128 kbps).mp3" type="AudioStream" id=11]
 [ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/Explosion/sprites/explosion-animation7.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/Explosion/sprites/explosion-animation6.png" type="Texture" id=13]
 [ext_resource path="res://Assets/LifeBars/Horizontal/Bars/Bar2.png" type="Texture" id=14]
@@ -74,7 +74,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 2, -12 )
 frames = SubResource( 1 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

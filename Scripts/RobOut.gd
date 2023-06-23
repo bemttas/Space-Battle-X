@@ -17,6 +17,7 @@ func _ready():
 
 func dead():
 	$hit.play()
+	get_node("../../KinematicBody2D/Camera2D").shake()
 	is_dead = true
 	velocity = Vector2(0,0)
 	$AnimatedSprite.play("dead")

@@ -27,6 +27,7 @@ var lv3_col1 = false
 var lv3_col2 = false
 var lv3_col3 = false
 var nickname = ""
+var lifes = 3
 
 # Save variables
 var save_path = "user://.sbx64.dat"
