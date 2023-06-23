@@ -201,9 +201,9 @@ func dead():
 	$Timer.start()
 	Globals.lifes -= 1
 	yield(get_tree().create_timer(0.5), "timeout")
-	get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
-	yield(get_tree().create_timer(1.0), "timeout")
 	if Globals.lifes > 0: 
+		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
+		yield(get_tree().create_timer(1.0), "timeout")
 		HP = 100
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("out")
 		is_dead = false
@@ -212,6 +212,9 @@ func dead():
 		position = Globals.respawn_point
 		yield(get_tree().create_timer(1.0), "timeout")
 	else:
+		yield(get_tree().create_timer(4.0), "timeout")
+		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
+		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene(("res://Scenes/menu.tscn"))
 
 

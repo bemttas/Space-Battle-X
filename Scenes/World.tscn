@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0009_Untitled-1111.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0005_1_0005_player_walking_2.png.png.png" type="Texture" id=2]
@@ -48,7 +48,8 @@
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=46]
 [ext_resource path="res://Assets/Background/Gerald's Keys/Keys/Z-Key.png" type="Texture" id=47]
 [ext_resource path="res://Assets/Background/Gerald's Keys/Keys/X-Key.png" type="Texture" id=48]
-[ext_resource path="res://Scenes/World.gd" type="Script" id=49]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=49]
+[ext_resource path="res://Scenes/Gameover.gd" type="Script" id=50]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 64, 0, 64, 0, 8, 16, 8 )
@@ -524,6 +525,18 @@ position = Vector2( 97, 179 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 32 )
 
+[node name="Gameover" type="Label" parent="HUD"]
+visible = false
+margin_left = 172.0
+margin_top = 287.0
+margin_right = 356.0
+margin_bottom = 319.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
+text = "GAME OVER"
+script = ExtResource( 50 )
+
 [node name="Label" type="Label" parent="HUD"]
 visible = false
 margin_left = 343.0
@@ -828,6 +841,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

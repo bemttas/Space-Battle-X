@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0009_Untitled-1111.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0005_1_0005_player_walking_2.png.png.png" type="Texture" id=2]
@@ -26,7 +26,9 @@
 [ext_resource path="res://Scenes/Aguia.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/SlimeOut.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/transicao.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scripts/World1.gd" type="Script" id=27]
 [ext_resource path="res://Assets/Characters/PlayerOrange/dano.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/Gameover.gd" type="Script" id=29]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1_0002_player_squatted_3.png.png" type="Texture" id=30]
 [ext_resource path="res://Assets/LifeBars/Vertical/Bars/Bar6.png" type="Texture" id=31]
 [ext_resource path="res://Assets/LifeBars/Vertical/Boarder/Boarder1.png" type="Texture" id=32]
@@ -471,6 +473,7 @@ extents = Vector2( 11.125, 13.5 )
 extents = Vector2( 8, 20 )
 
 [node name="World1" type="Node"]
+script = ExtResource( 27 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -510,6 +513,18 @@ custom_fonts/font = ExtResource( 45 )
 text = "Astroblade"
 script = ExtResource( 46 )
 
+[node name="Gameover" type="Label" parent="HUD"]
+visible = false
+margin_left = 172.0
+margin_top = 287.0
+margin_right = 356.0
+margin_bottom = 319.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 45 )
+text = "GAME OVER"
+script = ExtResource( 29 )
+
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 0.356863, 1, 0.764706, 1 )
 tile_set = SubResource( 36 )
@@ -540,6 +555,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
