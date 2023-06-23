@@ -37,6 +37,10 @@ func _process(delta):
 			currentZoom = currentZoom.linear_interpolate(targetZoom, t)
 			zoom = currentZoom
 		limit_left = 3786
+	else:
+		limit_left = -482
+		zoom.x = 0.33
+		zoom.y = 0.33
 	if shake_timer > 0:
 		shake_timer -= delta
 		if shake_timer <= 0:

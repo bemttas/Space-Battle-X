@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Background/Sideview Sci-Fi - Patreon Collection/Sprites/alien-walking-enemy/PNG/alien-enemy-walk.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/SlimeOut.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/SlimeOut.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Bullet/Mini_Effect_2D/Effect3.png" type="Texture" id=10]
 [ext_resource path="res://Sounds/Undertale Sound Effect - Attack Hit (128 kbps).mp3" type="AudioStream" id=11]
 [ext_resource path="res://Assets/LifeBars/Horizontal/Bars/Bar2.png" type="Texture" id=14]
@@ -85,7 +85,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 7 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

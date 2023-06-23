@@ -500,10 +500,10 @@ texture = ExtResource( 32 )
 
 [node name="Label" type="Label" parent="HUD"]
 visible = false
-margin_left = 343.0
-margin_top = 85.0
-margin_right = 635.0
-margin_bottom = 118.0
+margin_left = 463.0
+margin_top = 72.0
+margin_right = 755.0
+margin_bottom = 105.0
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 45 )
@@ -540,6 +540,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -692,5 +693,14 @@ position = Vector2( 743, 101 )
 
 [node name="Inimigo5" parent="Inimigos" instance=ExtResource( 18 )]
 position = Vector2( 2265, 69 )
+
+[node name="Checkpoint1" type="Position2D" parent="."]
+position = Vector2( -189, 28 )
+
+[node name="Checkpoint2" type="Position2D" parent="."]
+position = Vector2( 1062, 88 )
+
+[node name="Checkpoint3" type="Position2D" parent="."]
+position = Vector2( 3247, -41 )
 
 [connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]

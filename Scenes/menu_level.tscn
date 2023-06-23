@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Background/space.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/menu_level.gd" type="Script" id=2]
@@ -25,16 +25,6 @@
 [sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="StyleBoxEmpty" id=14]
-
-[sub_resource type="StyleBoxEmpty" id=15]
 
 [sub_resource type="StyleBoxEmpty" id=16]
 
@@ -88,25 +78,21 @@ margin_top = 273.0
 margin_right = 828.0
 margin_bottom = 305.0
 rect_scale = Vector2( 1.5, 1.5 )
-focus_neighbour_left = NodePath("Button3")
 focus_neighbour_top = NodePath("../HBoxContainer2/Button4")
 focus_neighbour_right = NodePath("Button2")
 focus_neighbour_bottom = NodePath("../HBoxContainer2/Button4")
 focus_next = NodePath("Button2")
-focus_previous = NodePath("Button3")
 custom_constants/separation = 175
 alignment = 1
 
 [node name="Button" type="Button" parent="HBoxContainer"]
-margin_left = 13.0
-margin_right = 133.0
+margin_left = 164.0
+margin_right = 284.0
 margin_bottom = 32.0
-focus_neighbour_left = NodePath("../Button3")
 focus_neighbour_top = NodePath("../../HBoxContainer2/Button4")
 focus_neighbour_right = NodePath("../Button2")
 focus_neighbour_bottom = NodePath("../../HBoxContainer2/Button4")
 focus_next = NodePath("../Button2")
-focus_previous = NodePath("../Button3")
 mouse_default_cursor_shape = 2
 custom_colors/font_color_disabled = Color( 0.294118, 0.294118, 0, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 0, 1 )
@@ -123,14 +109,12 @@ text = "Level 1"
 flat = true
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
-margin_left = 308.0
-margin_right = 436.0
+margin_left = 459.0
+margin_right = 587.0
 margin_bottom = 32.0
 focus_neighbour_left = NodePath("../Button")
 focus_neighbour_top = NodePath("../../HBoxContainer2/Button4")
-focus_neighbour_right = NodePath("../Button3")
 focus_neighbour_bottom = NodePath("../../HBoxContainer2/Button4")
-focus_next = NodePath("../Button3")
 focus_previous = NodePath("../Button")
 mouse_default_cursor_shape = 2
 custom_colors/font_color_disabled = Color( 0.294118, 0.294118, 0, 1 )
@@ -145,31 +129,6 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 text = "Level 2"
-flat = true
-
-[node name="Button3" type="Button" parent="HBoxContainer"]
-margin_left = 611.0
-margin_right = 739.0
-margin_bottom = 32.0
-focus_neighbour_left = NodePath("../Button2")
-focus_neighbour_top = NodePath("../../HBoxContainer2/Button4")
-focus_neighbour_right = NodePath("../Button")
-focus_neighbour_bottom = NodePath("../../HBoxContainer2/Button4")
-focus_next = NodePath("../Button")
-focus_previous = NodePath("../Button2")
-mouse_default_cursor_shape = 2
-custom_colors/font_color_disabled = Color( 0.294118, 0.294118, 0, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 0, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.294118, 0.294118, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 14 )
-custom_styles/normal = SubResource( 15 )
-text = "Level 3"
 flat = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
@@ -265,9 +224,6 @@ drag_and_drop_selection_enabled = false
 [connection signal="mouse_entered" from="HBoxContainer/Button2" to="." method="_on_Button2_mouse_entered"]
 [connection signal="mouse_exited" from="HBoxContainer/Button2" to="." method="_on_Button2_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="mouse_entered" from="HBoxContainer/Button3" to="." method="_on_Button3_mouse_entered"]
-[connection signal="mouse_exited" from="HBoxContainer/Button3" to="." method="_on_Button3_mouse_exited"]
-[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="mouse_entered" from="HBoxContainer2/Button4" to="." method="_on_Button4_mouse_entered"]
 [connection signal="mouse_exited" from="HBoxContainer2/Button4" to="." method="_on_Button4_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer2/Button4" to="." method="_on_Button4_pressed"]

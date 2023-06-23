@@ -38,6 +38,7 @@ func dead():
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	$Area2D/CollisionShape2D.call_deferred("set_disabled", true)
 	$Timer.start()
+	Globals.lv2_enable = true
 	$BOSSHUD.visible = false
 	
 	
@@ -83,7 +84,9 @@ func _physics_process(delta):
 			if fireTimer >= fireRate:
 				fireTimer = 0
 				shoot_fireball()
-			
+	else:
+		$BOSSHUD.visible = false
+		
 func shoot_fireball():
 	for spawnPoint in fireballSpawnPoints:
 		var direction = (player.global_position - spawnPoint.global_position).normalized()

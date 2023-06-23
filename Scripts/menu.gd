@@ -53,6 +53,8 @@ func _on_Button2_pressed():
 	else:
 		$transition.get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
+		Globals.lv1_in = true
+		Globals.lv2_in = false
 		get_tree().change_scene(("res://Scenes/World.tscn"))
 
 func _on_Button3_mouse_entered():

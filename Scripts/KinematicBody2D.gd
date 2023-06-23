@@ -16,7 +16,7 @@ var invincible = false
 var invincibleDuration = 1.0
 var invincibleTimer = 0.0
 
-
+var direction
 
 const tiro = preload("res://Scenes/Tiro.tscn")
 var HP = 100.0
@@ -29,8 +29,25 @@ var agachado = false
 var is_dead = false
 var hit = false
 
+onready var checkpoint1 = get_node("../Checkpoint1")
+onready var checkpoint2 = get_node("../Checkpoint2")
+onready var checkpoint3 = get_node("../Checkpoint3")
+
 func _physics_process(delta):
 	Globals.player_position = position
+	Globals.respawn_point = checkpoint1.position
+	print (Globals.respawn_point)
+	
+	if position.x > checkpoint2.position.x:
+		Globals.respawn_point = checkpoint2.position
+		
+	if position.x > checkpoint3.position.x:
+		Globals.respawn_point = checkpoint3.position
+
+
+	
+	
+	
 	
 	if boss_dead == true:
 		yield(get_tree().create_timer(3.0), "timeout")
@@ -53,8 +70,7 @@ func _physics_process(delta):
 			modulate.a = 1.0
 		else:
 			modulate.a = 0.6
-		
-	print(position)
+	
 	if is_dead == false and hit == false and boss_dead == false:
 		
 		if not isdash:
@@ -103,6 +119,7 @@ func _physics_process(delta):
 		if isdash == false:
 			if Input.is_action_pressed("ui_right") and not agachado:
 				motion.x += ACC
+				direction = 1
 				motion.x = min(motion.x+ACC, MAX_SPEED)
 				$Sprite.flip_h = false
 				$Sprite.play("andar")
@@ -111,6 +128,7 @@ func _physics_process(delta):
 					$Position2D.position.x *= -1
 				
 			elif Input.is_action_pressed("ui_left") and not agachado:
+				direction = -1
 				motion.x = max(motion.x-ACC, -MAX_SPEED)
 				$Sprite.flip_h = true
 				$Sprite.play("andar")
@@ -184,10 +202,14 @@ func dead():
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
-	
-	get_tree().change_scene(("res://Scenes/World.tscn"))
-	
-	pass
+	HP = 100
+	get_node("../transition").get_node("ColorRect").get_node("animation").play("out")
+	is_dead = false
+	$CollisionShape2D.disabled = false
+	direction = 1
+	position = Globals.respawn_point
+	yield(get_tree().create_timer(1.0), "timeout")
+
 
 func onInvincibleTimerTimeout():
 	invincible = false

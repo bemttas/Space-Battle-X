@@ -573,14 +573,12 @@ text = "DASH"
 position = Vector2( -227, 14 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 33 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Objetos"]
 position = Vector2( -222, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 
 [node name="Sprite3" type="Sprite" parent="Objetos"]
@@ -998,5 +996,14 @@ volume_db = -16.0
 autoplay = true
 
 [node name="transition" parent="." instance=ExtResource( 26 )]
+
+[node name="Checkpoint1" type="Position2D" parent="."]
+position = Vector2( -214, 74 )
+
+[node name="Checkpoint2" type="Position2D" parent="."]
+position = Vector2( 2555, -77 )
+
+[node name="Checkpoint3" type="Position2D" parent="."]
+position = Vector2( 3554, -166 )
 
 [connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]
