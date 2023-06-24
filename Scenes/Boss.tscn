@@ -98,13 +98,13 @@ position = Vector2( -4.4, -15.8 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "andando"
-frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -2.75, 15.75 )
 shape = SubResource( 4 )
 
@@ -115,6 +115,7 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2( -3.95, 16.75 )
 shape = SubResource( 3 )
 __meta__ = {

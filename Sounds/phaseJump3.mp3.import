@@ -11,5 +11,5 @@ dest_files=[ "res://.import/phaseJump3.mp3-2a2f6a3ef269fd2658749e4e4747e695.mp3s
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
