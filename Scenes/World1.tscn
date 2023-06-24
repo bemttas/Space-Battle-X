@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0009_Untitled-1111.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0005_1_0005_player_walking_2.png.png.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://Sounds/laser2.mp3" type="AudioStream" id=35]
 [ext_resource path="res://Assets/Bullet/Mini_Effect_2D/Effect5.png" type="Texture" id=36]
 [ext_resource path="res://Assets/Objects/basic life bars a icons .png" type="Texture" id=37]
+[ext_resource path="res://Sounds/phaseJump3.mp3" type="AudioStream" id=38]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=39]
 [ext_resource path="res://Sounds/Undertale Sound Effect - Attack Hit (128 kbps).mp3" type="AudioStream" id=40]
 [ext_resource path="res://Fonts/poco/Poco.tres" type="DynamicFont" id=45]
@@ -638,6 +639,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -680,6 +682,10 @@ __meta__ = {
 [node name="hit" type="AudioStreamPlayer" parent="KinematicBody2D"]
 stream = ExtResource( 40 )
 volume_db = -16.169
+
+[node name="health" type="AudioStreamPlayer" parent="KinematicBody2D"]
+stream = ExtResource( 38 )
+volume_db = -3.714
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
