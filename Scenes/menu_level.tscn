@@ -1,10 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/Background/space.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/menu_level.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/poco/Poco.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/transicao.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sounds/sky.mp3" type="AudioStream" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -190,12 +189,6 @@ custom_styles/disabled = SubResource( 28 )
 custom_styles/normal = SubResource( 29 )
 text = "STATISTICS"
 flat = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -6.191
-pitch_scale = 0.86
-autoplay = true
 
 [node name="TextEdit" type="TextEdit" parent="."]
 margin_left = 16.0

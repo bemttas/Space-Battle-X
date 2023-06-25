@@ -600,7 +600,7 @@ tile_data = PoolIntArray( -1376021, 0, 0, -1376020, 1, 0, -1376018, 1, 0, -13760
 [node name="Itens" type="Node2D" parent="."]
 
 [node name="health" type="AnimatedSprite" parent="Itens"]
-position = Vector2( 577, 10 )
+position = Vector2( 1153, -57 )
 frames = SubResource( 38 )
 script = ExtResource( 52 )
 
@@ -659,14 +659,12 @@ text = "DASH"
 position = Vector2( -227, 14 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 33 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Objetos"]
 position = Vector2( -222, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 
 [node name="Sprite3" type="Sprite" parent="Objetos"]

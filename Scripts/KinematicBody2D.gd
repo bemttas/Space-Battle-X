@@ -54,6 +54,7 @@ func _physics_process(delta):
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
 		var save_file = File.new()
+		Music.play()
 		if save_file.file_exists(Globals.save_path):
 			Globals.createsave()
 			get_tree().change_scene(("res://Scenes/menu_level.tscn"))
@@ -215,6 +216,7 @@ func dead():
 		yield(get_tree().create_timer(4.0), "timeout")
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
+		Music.play()
 		get_tree().change_scene(("res://Scenes/menu.tscn"))
 
 

@@ -18,6 +18,7 @@ config/icon="res://Assets/Logo/icon.png"
 
 Globals="*res://Scripts/globals.gd"
 Transicao="*res://Scenes/transicao.tscn"
+Music="*res://AutoLoad/Music.tscn"
 
 [display]
 

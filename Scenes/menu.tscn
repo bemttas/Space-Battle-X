@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Background/space.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Logo/logo.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/poco/Poco.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scripts/menu.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/transicao.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sounds/sky.mp3" type="AudioStream" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
@@ -163,12 +162,6 @@ margin_bottom = 80.0
 custom_fonts/font = ExtResource( 4 )
 text = "©BEG All Rights Reserved"
 flat = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -6.191
-pitch_scale = 0.86
-autoplay = true
 
 [node name="transition" parent="." instance=ExtResource( 6 )]
 visible = false

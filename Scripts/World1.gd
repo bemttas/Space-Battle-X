@@ -8,6 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Music.stop()
 	Globals.lifes = 3
 	pass # Replace with function body.
 
