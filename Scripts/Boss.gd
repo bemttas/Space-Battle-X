@@ -60,7 +60,7 @@ func _physics_process(delta):
 			if stepCounter < STEP_DISTANCE:
 				var collision = move_and_collide(velocity * delta)
 				
-				if collision:
+				if is_on_wall():
 					direction *= -1  # Inverte a direção se houver colisão com uma parede
 				
 				velocity.x = SPEED * direction
@@ -86,6 +86,9 @@ func _physics_process(delta):
 				fireTimer = 0
 				shoot_fireball()
 	else:
+		HP = 100
+		direction = -1
+		position = Vector2(4413.0, -106.0)
 		$BOSSHUD.visible = false
 		
 func shoot_fireball():

@@ -635,6 +635,18 @@ visible = false
 visible = false
 shape = SubResource( 39 )
 
+[node name="health4" type="AnimatedSprite" parent="Itens"]
+position = Vector2( 4718, -133 )
+frames = SubResource( 38 )
+script = ExtResource( 52 )
+
+[node name="Area2D" type="Area2D" parent="Itens/health4"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/health4/Area2D"]
+visible = false
+shape = SubResource( 39 )
+
 [node name="Objetos" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Objetos"]
@@ -659,12 +671,14 @@ text = "DASH"
 position = Vector2( -227, 14 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 33 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Objetos"]
 position = Vector2( -222, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 
 [node name="Sprite3" type="Sprite" parent="Objetos"]
@@ -914,6 +928,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -1086,7 +1101,7 @@ autoplay = true
 [node name="transition" parent="." instance=ExtResource( 26 )]
 
 [node name="Checkpoint1" type="Position2D" parent="."]
-position = Vector2( -214, 74 )
+position = Vector2( -185, 76 )
 
 [node name="Checkpoint2" type="Position2D" parent="."]
 position = Vector2( 2555, -77 )
@@ -1097,4 +1112,5 @@ position = Vector2( 3554, -166 )
 [connection signal="body_entered" from="Itens/health/Area2D" to="Itens/health" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Itens/health2/Area2D" to="Itens/health2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Itens/health3/Area2D" to="Itens/health3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Itens/health4/Area2D" to="Itens/health4" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]

@@ -6,7 +6,7 @@ var fade_state = 0
 var animation_complete = false
 
 func _process(delta):
-	if Globals.boss1_died == true:
+	if Globals.boss1_died == true or Globals.boss2_died == true:
 		visible = true
 		current_time += delta
 

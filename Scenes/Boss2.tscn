@@ -1,0 +1,88 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_11.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Boss2.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_7.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/8-Bit Explosion 2 - Sound Effect (HD) (128 kbps).mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_8.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_9.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_5.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_6.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/dead/dead_10.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_1.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_4.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_5.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_6.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_7.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Characters/boss_demon_slime_FREE_v1.0/alien/walk_8.png" type="Texture" id=32]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "andando",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "dead",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 18.5, 46 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.025, 45.875 )
+
+[node name="Boss2" type="KinematicBody2D"]
+scale = Vector2( 4, 4 )
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4.4, -15.8 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 1 )
+animation = "andando"
+frame = 7
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5.25, -29.5 )
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -6.225, -29.875 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="hitt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -4.602
+
+[node name="FireBall1" type="Position2D" parent="."]
+position = Vector2( 14.5, -25.5 )
+rotation = 0.00829315
+
+[node name="FireBall2" type="Position2D" parent="."]
+position = Vector2( 14.5, -34.5 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

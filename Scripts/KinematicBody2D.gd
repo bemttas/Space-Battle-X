@@ -36,7 +36,7 @@ onready var checkpoint3 = get_node("../Checkpoint3")
 func _physics_process(delta):
 	Globals.player_position = position
 	Globals.respawn_point = checkpoint1.position
-	print (Globals.respawn_point)
+	print (position)
 	
 	if position.x > checkpoint2.position.x:
 		Globals.respawn_point = checkpoint2.position

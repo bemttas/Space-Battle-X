@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Bullet/fireball-sprites/fireball1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/FireB.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Bullet/fireball-sprites/fireball2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Bullet/fireball-sprites/fireball3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Bullet/Mini_Effect_2D/Effect10.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "oi",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 13.0
+
+[node name="Fiire" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2.27374e-13, -2.27374e-13 )
+scale = Vector2( 1.15385, 1.15385 )
+frames = SubResource( 1 )
+animation = "oi"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_RigidBody2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
