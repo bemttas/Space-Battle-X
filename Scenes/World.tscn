@@ -398,22 +398,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 4.5, 7 )
 
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 48 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 48 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=33]
-animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 32 ) ],
-"loop": true,
-"name": "default",
-"speed": 2.0
-} ]
-
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 47 )
 region = Rect2( 0, 0, 32, 32 )
@@ -425,6 +409,22 @@ region = Rect2( 32, 0, 32, 32 )
 [sub_resource type="SpriteFrames" id=36]
 animations = [ {
 "frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 48 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
@@ -667,17 +667,42 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 45 )
 text = "DASH"
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="Objetos"]
-position = Vector2( -227, 14 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 33 )
-frame = 1
-playing = true
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Objetos"]
 position = Vector2( -222, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
+frame = 1
+playing = true
+
+[node name="Label3" type="Label" parent="Objetos"]
+margin_left = 2593.0
+margin_top = -144.0
+margin_right = 2673.0
+margin_bottom = -112.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 45 )
+text = "DASH"
+
+[node name="Label4" type="Label" parent="Objetos"]
+margin_left = 2542.0
+margin_top = -144.0
+margin_right = 2642.0
+margin_bottom = -112.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 45 )
+text = "JUMP+"
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Objetos"]
+position = Vector2( 2645, -137 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 36 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Objetos"]
+position = Vector2( -227, 14 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 33 )
 frame = 1
 playing = true
 
@@ -1037,6 +1062,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = -16.0
+autoplay = true
+
 [node name="Inimigos" type="Node2D" parent="."]
 
 [node name="Slime" parent="Inimigos" instance=ExtResource( 17 )]
@@ -1093,15 +1123,10 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 32 )
 offset = Vector2( 1550, 0 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 27 )
-volume_db = -16.0
-autoplay = true
-
 [node name="transition" parent="." instance=ExtResource( 26 )]
 
 [node name="Checkpoint1" type="Position2D" parent="."]
-position = Vector2( -185, 76 )
+position = Vector2( -185, 74 )
 
 [node name="Checkpoint2" type="Position2D" parent="."]
 position = Vector2( 2555, -77 )

@@ -19,7 +19,7 @@ const STEP_DISTANCE = 100
 var stepCounter = 4
 
 var fireTimer = 0
-var HP = 10
+var HP = 100
 var fireballSpawnPoints = []
 var direction = 1
 
@@ -29,6 +29,8 @@ func _ready():
 	pass 
 
 func dead():
+	Music.winplay()
+	Music.bossstop()
 	$hitt.play()
 	get_node("../../KinematicBody2D/Camera2D").shakehigh()
 	get_node("../../KinematicBody2D").boss_dead = true

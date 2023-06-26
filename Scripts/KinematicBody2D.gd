@@ -43,10 +43,14 @@ func _physics_process(delta):
 		
 	if position.x > checkpoint3.position.x:
 		Globals.respawn_point = checkpoint3.position
-
-
+		
+	if Globals.player_position.x < 3991.0:
+		Music.bossplay()
+	else:
+		get_node("../Song").play()
 	
-	
+	if Globals.player_position.x > 3991.0:
+		get_node("../Song").stop()
 	
 	
 	if boss_dead == true:
@@ -216,6 +220,7 @@ func dead():
 		yield(get_tree().create_timer(4.0), "timeout")
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
+		Music.bossstop()
 		Music.play()
 		get_tree().change_scene(("res://Scenes/menu.tscn"))
 

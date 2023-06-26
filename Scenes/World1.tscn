@@ -808,7 +808,7 @@ position = Vector2( 445, 10 )
 scale = Vector2( 2.1, 2.5 )
 texture = ExtResource( 11 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 volume_db = -16.0
 autoplay = true

@@ -39,7 +39,7 @@ animations = [ {
 extents = Vector2( 18.5, 46 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 19.025, 45.875 )
+extents = Vector2( 118.4, 45.875 )
 
 [node name="Boss2" type="KinematicBody2D"]
 scale = Vector2( 4, 4 )
@@ -52,7 +52,7 @@ position = Vector2( -4.4, -15.8 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "andando"
-frame = 7
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -69,7 +69,7 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -6.225, -29.875 )
+position = Vector2( -105.6, -29.875 )
 shape = SubResource( 3 )
 disabled = true
 

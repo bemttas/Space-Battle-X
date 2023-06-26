@@ -13,10 +13,20 @@ func _ready():
 func play():
 	$Audio.play()
 
-
 func stop():
 	$Audio.stop()
 
+func winplay():
+	$WIN.play()
+	
+func winstop():
+	$WIN.stop()
+	
+func bossplay():
+	$BOSS.play()
+	
+func bossstop():
+	$BOSS.stop()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

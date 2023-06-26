@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sounds/sky.mp3" type="AudioStream" id=1]
 [ext_resource path="res://AutoLoad/Music.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/BOSSFIGHT.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/VICTORY.mp3" type="AudioStream" id=4]
 
 [node name="Music" type="Node2D"]
 script = ExtResource( 2 )
@@ -11,3 +13,10 @@ stream = ExtResource( 1 )
 volume_db = -10.669
 pitch_scale = 0.86
 autoplay = true
+
+[node name="WIN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="BOSS" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
