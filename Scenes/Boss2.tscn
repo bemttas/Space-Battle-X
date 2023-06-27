@@ -52,7 +52,7 @@ position = Vector2( -4.4, -15.8 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "andando"
-frame = 2
+frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -78,11 +78,14 @@ stream = ExtResource( 4 )
 volume_db = -4.602
 
 [node name="FireBall1" type="Position2D" parent="."]
-position = Vector2( 14.5, -25.5 )
+position = Vector2( 4, -20.25 )
 rotation = 0.00829315
 
 [node name="FireBall2" type="Position2D" parent="."]
-position = Vector2( 14.5, -34.5 )
+position = Vector2( 3.75, -20.25 )
+
+[node name="FireBall3" type="Position2D" parent="."]
+position = Vector2( 3.75, -20.25 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

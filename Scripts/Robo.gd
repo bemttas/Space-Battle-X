@@ -16,6 +16,7 @@ func _ready():
 	pass 
 
 func dead():
+	Globals.enemies_count += 1
 	$hitt.play()
 	get_node("../../KinematicBody2D/Camera2D").shake()
 	is_dead = true

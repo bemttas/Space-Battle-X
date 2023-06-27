@@ -39,6 +39,7 @@ func _change_direction():
 	direction *= -1
 
 func dead():
+	Globals.enemies_count += 1
 	$hit.play()
 	is_dead = true
 	velocity = Vector2(0,0)

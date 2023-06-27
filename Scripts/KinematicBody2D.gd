@@ -33,10 +33,14 @@ onready var checkpoint1 = get_node("../Checkpoint1")
 onready var checkpoint2 = get_node("../Checkpoint2")
 onready var checkpoint3 = get_node("../Checkpoint3")
 
+func _ready():
+	collision_layer = 1
+	collision_mask = 1
+	
 func _physics_process(delta):
+	
 	Globals.player_position = position
 	Globals.respawn_point = checkpoint1.position
-	print (position)
 	
 	if position.x > checkpoint2.position.x:
 		Globals.respawn_point = checkpoint2.position
@@ -54,6 +58,8 @@ func _physics_process(delta):
 	
 	
 	if boss_dead == true:
+		collision_layer = 4
+		collision_mask = 4
 		yield(get_tree().create_timer(3.0), "timeout")
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")
@@ -61,7 +67,10 @@ func _physics_process(delta):
 		Music.play()
 		if save_file.file_exists(Globals.save_path):
 			Globals.createsave()
-			get_tree().change_scene(("res://Scenes/menu_level.tscn"))
+			if Globals.boss2_died == true:
+				get_tree().change_scene(("res://Scenes/menu_thnks.tscn"))
+			else:
+				get_tree().change_scene(("res://Scenes/menu_level.tscn"))
 		else:
 			get_tree().change_scene(("res://Scenes/menu_name.tscn"))
 	
@@ -92,6 +101,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("fire"):
 			if motion.y < 0 or motion.y > 0:
 				$tiro.play()
+				Globals.fire_count += 1
 				var fire = tiro.instance()
 				if sign ($Position2D.position.x) == 1:
 					fire.set_fireball_direction(1)
@@ -178,6 +188,8 @@ func _physics_process(delta):
 		
 func hit(Damage: int):
 	if not invincible:
+		collision_layer=2
+		collision_mask=2
 		$hit.play()
 		get_node("Camera2D").shakehit()
 		hit = true
@@ -199,6 +211,7 @@ func hit(Damage: int):
 			invincible = false
 	
 func dead():
+	Globals.died_count += 1
 	is_dead = true
 	motion = Vector2(0, 0)
 	$Sprite.play("morte")

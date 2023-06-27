@@ -20,5 +20,6 @@ func _on_Button_pressed():
 	get_tree().change_scene(("res://Scenes/menu_level.tscn"))
 
 func _process(delta):
+	Music.bossstop()
 	$ParallaxBackground.scroll_offset.y -= 100 * delta
 

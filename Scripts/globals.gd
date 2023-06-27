@@ -30,6 +30,10 @@ var nickname = ""
 var lifes = 3
 var boss1_died
 var boss2_died
+var score = 0
+var enemies_count = 0
+var died_count = 0
+var fire_count = 0
 
 # Save variables
 var save_path = "user://.sbx64.dat"

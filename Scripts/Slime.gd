@@ -16,6 +16,7 @@ func _ready():
 	pass 
 
 func dead():
+	Globals.enemies_count += 1
 	$hit.play()
 	is_dead = true
 	velocity = Vector2(0,0)

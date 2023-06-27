@@ -606,6 +606,8 @@ script = ExtResource( 52 )
 
 [node name="Area2D" type="Area2D" parent="Itens/health"]
 visible = false
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/health/Area2D"]
 visible = false
@@ -618,6 +620,8 @@ script = ExtResource( 52 )
 
 [node name="Area2D" type="Area2D" parent="Itens/health2"]
 visible = false
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/health2/Area2D"]
 visible = false
@@ -630,6 +634,8 @@ script = ExtResource( 52 )
 
 [node name="Area2D" type="Area2D" parent="Itens/health3"]
 visible = false
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/health3/Area2D"]
 visible = false
@@ -642,6 +648,8 @@ script = ExtResource( 52 )
 
 [node name="Area2D" type="Area2D" parent="Itens/health4"]
 visible = false
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/health4/Area2D"]
 visible = false
@@ -953,7 +961,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -1126,7 +1133,7 @@ offset = Vector2( 1550, 0 )
 [node name="transition" parent="." instance=ExtResource( 26 )]
 
 [node name="Checkpoint1" type="Position2D" parent="."]
-position = Vector2( -185, 74 )
+position = Vector2( -187, 79 )
 
 [node name="Checkpoint2" type="Position2D" parent="."]
 position = Vector2( 2555, -77 )

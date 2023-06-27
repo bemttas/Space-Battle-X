@@ -27,6 +27,9 @@ func _on_Button5_mouse_exited():
 	$HBoxContainer/Button.set_focus_mode(2)
 	$HBoxContainer/Button2.set_focus_mode(2)
 func _on_Button5_pressed():
+	$transition.get_node("ColorRect").get_node("animation").play("in")
+	yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().change_scene(("res://Scenes/menu_stats.tscn"))
 	pass
 
 # Back button signal
@@ -90,6 +93,7 @@ func _on_Button2_pressed():
 
 # Main function
 func _process(delta):
+	Music.bossstop()
 	$ParallaxBackground.scroll_offset.x -= 100 * delta * 0.5
 	$ParallaxBackground.scroll_offset.y -= 100 * delta
 

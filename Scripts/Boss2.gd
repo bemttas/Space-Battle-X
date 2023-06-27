@@ -26,9 +26,11 @@ var direction = 1
 func _ready():
 	fireballSpawnPoints.append($FireBall1)
 	fireballSpawnPoints.append($FireBall2)
+	fireballSpawnPoints.append($FireBall3)
 	pass 
 
 func dead():
+	Globals.enemies_count += 1
 	Music.winplay()
 	Music.bossstop()
 	$hitt.play()
@@ -67,6 +69,11 @@ func _physics_process(delta):
 				if is_on_wall():
 					direction *= -1  # Inverte a direção se houver colisão com uma parede
 				
+				
+				if position.x > player.position.x:
+					player.dead()
+					
+					
 				velocity.x = SPEED * direction
 				
 				if direction == 1:

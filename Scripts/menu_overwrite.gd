@@ -35,6 +35,7 @@ func _on_Button2_mouse_exited():
 
 # Main function
 func _process(delta):
+	Music.bossstop()
 	$ParallaxBackground.scroll_offset.x += 100 * delta
 	$ParallaxBackground.scroll_offset.y -= 100 * delta * 0.5
 

@@ -29,6 +29,7 @@ func _ready():
 	pass 
 
 func dead():
+	Globals.enemies_count += 1
 	Music.winplay()
 	Music.bossstop()
 	$hitt.play()

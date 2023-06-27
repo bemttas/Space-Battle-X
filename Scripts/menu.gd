@@ -75,5 +75,6 @@ func _on_Button3_pressed():
 	get_tree().quit()
 
 func _process(delta):
+	Music.bossstop()
 	$ParallaxBackground.scroll_offset.x -= 100 * delta
 	$ParallaxBackground.scroll_offset.y -= 100 * delta * 0.5
