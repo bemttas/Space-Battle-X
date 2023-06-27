@@ -61,6 +61,11 @@ func loadsave():
 		lv3_col2 = json["lv3_col2"]
 		lv3_col3 = json["lv3_col3"]
 		nickname = json["nickname"]
+		enemies_count = json["enemies_count"]
+		died_count = json["died_count"]
+		fire_count = json["fire_count"]
+		
+		
 
 # Create new data
 func createsave():
@@ -84,7 +89,10 @@ func createsave():
 		"lv3_col1": lv3_col1,
 		"lv3_col2": lv3_col2,
 		"lv3_col3": lv3_col3,
-		"nickname": nickname
+		"nickname": nickname,
+		"enemies_count": enemies_count,
+		"died_count": died_count,
+		"fire_count": fire_count
 	}
 	var json = JSON.print(data)
 	var file = File.new()

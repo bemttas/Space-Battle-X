@@ -230,6 +230,7 @@ func dead():
 		position = Globals.respawn_point
 		yield(get_tree().create_timer(1.0), "timeout")
 	else:
+		Globals.createsave()
 		yield(get_tree().create_timer(4.0), "timeout")
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
 		yield(get_tree().create_timer(1.0), "timeout")

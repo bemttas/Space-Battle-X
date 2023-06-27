@@ -69,12 +69,10 @@ func _on_Button3_mouse_exited():
 func _on_Button3_pressed():
 	$transition.get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
-	if exist_save:
-		var dir = Directory.new()
-		dir.remove(Globals.save_path)
 	get_tree().quit()
 
 func _process(delta):
+	print(str(Globals.fire_count))
 	Music.bossstop()
 	$ParallaxBackground.scroll_offset.x -= 100 * delta
 	$ParallaxBackground.scroll_offset.y -= 100 * delta * 0.5
