@@ -211,13 +211,13 @@ func hit(Damage: int):
 			invincible = false
 	
 func dead():
-	Globals.died_count += 1
 	is_dead = true
 	motion = Vector2(0, 0)
 	$Sprite.play("morte")
 	$CollisionShape2D.disabled = true
 	$Timer.start()
 	Globals.lifes -= 1
+	Globals.died_count += 1
 	yield(get_tree().create_timer(0.5), "timeout")
 	if Globals.lifes > 0: 
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")
