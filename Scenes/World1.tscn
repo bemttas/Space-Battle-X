@@ -714,7 +714,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
