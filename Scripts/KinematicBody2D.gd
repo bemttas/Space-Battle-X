@@ -188,23 +188,21 @@ func _physics_process(delta):
 		
 func hit(Damage: int):
 	if not invincible:
-		collision_layer=2
-		collision_mask=2
-		$hit.play()
-		get_node("Camera2D").shakehit()
-		hit = true
 		HP = HP-Damage
 		motion.y = 0
-		$Sprite.play("dano")
-		yield(get_tree().create_timer(0.3), "timeout")
 		hit = false
 		if HP <= 0:
 			dead()
 		else:
 			invincible = true
-			invincibleTimer = invincibleDuration
+			get_node("Camera2D").shakehit()
+			$hit.play()
 			collision_layer=2
 			collision_mask=2
+			hit = true
+			$Sprite.play("dano")
+			yield(get_tree().create_timer(0.3), "timeout")
+			hit = false
 			yield(get_tree().create_timer(1.0), "timeout")
 			collision_layer=1
 			collision_layer=1
@@ -224,10 +222,10 @@ func dead():
 		yield(get_tree().create_timer(1.0), "timeout")
 		HP = 100
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("out")
-		is_dead = false
-		$CollisionShape2D.disabled = false
 		direction = 1
 		position = Globals.respawn_point
+		is_dead = false
+		$CollisionShape2D.disabled = false
 		yield(get_tree().create_timer(1.0), "timeout")
 	else:
 		yield(get_tree().create_timer(4.0), "timeout")

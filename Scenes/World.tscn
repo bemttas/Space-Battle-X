@@ -679,6 +679,7 @@ text = "DASH"
 position = Vector2( -222, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 
 [node name="Label3" type="Label" parent="Objetos"]
@@ -703,12 +704,14 @@ text = "JUMP+"
 position = Vector2( 2645, -137 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Objetos"]
 position = Vector2( -227, 14 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 33 )
+frame = 1
 playing = true
 
 [node name="Sprite3" type="Sprite" parent="Objetos"]
@@ -958,7 +961,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 animation = "parado"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

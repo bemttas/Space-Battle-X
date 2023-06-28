@@ -22,8 +22,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7, 7 )
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id=6]
 
 [node name="Fire1" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -42,9 +41,11 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -1.19209e-07, 1.19209e-07 )
+scale = Vector2( 0.7, 0.7 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
