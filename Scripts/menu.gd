@@ -18,7 +18,6 @@ func _ready():
 		$VBoxContainer/Button.set("custom_colors/font_color_hover", Color(0.29,0.29,0,1))
 		$VBoxContainer/Button.set("custom_colors/font_color", Color(0.29,0.29,0.29,1))
 		$VBoxContainer/Button2.grab_focus()
-	print(Globals.save_path)
 
 func _on_Button_mouse_entered():
 	$VBoxContainer/Button2.release_focus()
@@ -72,7 +71,6 @@ func _on_Button3_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	print(str(Globals.fire_count))
 	Music.bossstop()
 	$ParallaxBackground.scroll_offset.x -= 100 * delta
 	$ParallaxBackground.scroll_offset.y -= 100 * delta * 0.5
