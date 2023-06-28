@@ -20,6 +20,7 @@ func _on_Button2_pressed():
 	
 	var dir = Directory.new()
 	dir.remove(Globals.save_path)
+	Globals.reset_var()
 	$transition.get_node("ColorRect").get_node("animation").play("in")
 	yield(get_tree().create_timer(1.0), "timeout")
 	Globals.lv1_in = true

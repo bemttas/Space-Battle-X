@@ -99,3 +99,29 @@ func createsave():
 	if file.open_encrypted_with_pass(save_path, File.WRITE, "!@#$%¨*()_+123654789?     ...     By Bemttas&Martins") == OK:
 		file.store_string(json)
 		file.close()
+
+
+func reset_var():
+	lv1_enable = true
+	lv2_enable = false
+	lv3_enable = false
+	lv1_stars = 0
+	lv2_stars = 0
+	lv3_stars = 0
+	lv1_in = false
+	lv2_in = false
+	lv1_col1 = false
+	lv1_col2 = false
+	lv1_col3 = false
+	lv2_col1 = false
+	lv2_col2 = false
+	lv2_col3 = false
+	lv3_col1 = false
+	lv3_col2 = false
+	lv3_col3 = false
+	nickname = ""
+	lifes = 3
+	score = 0
+	enemies_count = 0
+	died_count = 0
+	fire_count = 0
