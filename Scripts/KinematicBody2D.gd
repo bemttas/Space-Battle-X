@@ -192,6 +192,7 @@ func hit(Damage: int):
 		motion.y = 0
 		hit = false
 		if HP <= 0:
+			$hit.play()
 			dead()
 		else:
 			invincible = true
