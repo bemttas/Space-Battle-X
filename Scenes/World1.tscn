@@ -630,6 +630,7 @@ valign = 1
 script = ExtResource( 47 )
 
 [node name="Pause" type="Node" parent="HUD"]
+pause_mode = 2
 script = ExtResource( 48 )
 
 [node name="ColorRect" type="ColorRect" parent="HUD/Pause"]
