@@ -8,6 +8,8 @@ var respawn_point
 
 var player_position
 
+var pausable = true
+
 # Game variables
 var lv1_enable = true
 var lv2_enable = false
@@ -125,3 +127,4 @@ func reset_var():
 	enemies_count = 0
 	died_count = 0
 	fire_count = 0
+	get_tree().paused = false

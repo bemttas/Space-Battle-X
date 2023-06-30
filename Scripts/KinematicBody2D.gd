@@ -210,6 +210,7 @@ func hit(Damage: int):
 	
 func dead():
 	is_dead = true
+	Globals.pausable = false
 	motion = Vector2(0, 0)
 	$Sprite.play("morte")
 	$CollisionShape2D.disabled = true
@@ -227,6 +228,7 @@ func dead():
 		is_dead = false
 		$CollisionShape2D.disabled = false
 		yield(get_tree().create_timer(1.0), "timeout")
+		Globals.pausable = true
 	else:
 		yield(get_tree().create_timer(4.0), "timeout")
 		get_node("../transition").get_node("ColorRect").get_node("animation").play("in")

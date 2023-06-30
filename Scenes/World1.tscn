@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0009_Untitled-1111.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/PlayerOrange/Untitled-1112_0005_1_0005_player_walking_2.png.png.png" type="Texture" id=2]
@@ -47,6 +47,7 @@
 [ext_resource path="res://Fonts/poco/Poco.tres" type="DynamicFont" id=45]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=46]
 [ext_resource path="res://Scripts/Win.gd" type="Script" id=47]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=48]
 
 [sub_resource type="ConvexPolygonShape2D" id=31]
 points = PoolVector2Array( 96, 80, 0, 80, 0, 8, 96, 8 )
@@ -627,6 +628,15 @@ text = "YOU WIN"
 align = 1
 valign = 1
 script = ExtResource( 47 )
+
+[node name="Pause" type="Node" parent="HUD"]
+script = ExtResource( 48 )
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Pause"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.588235 )
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 0.356863, 1, 0.764706, 1 )

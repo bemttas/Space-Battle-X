@@ -12,6 +12,4 @@ func _ready():
 	Globals.boss2_died = false
 	Music.stop()
 	Globals.lifes = 3
-	pass # Replace with function body.
-
-
+	Globals.pausable = true

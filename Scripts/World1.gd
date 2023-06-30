@@ -12,9 +12,4 @@ func _ready():
 	Globals.boss2_died = false
 	Music.stop()
 	Globals.lifes = 3
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	Globals.pausable = true

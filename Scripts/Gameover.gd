@@ -7,6 +7,7 @@ var animation_complete = false
 
 func _process(delta):
 	if Globals.lifes <= 0:
+		Globals.pausable = false
 		visible = true
 		current_time += delta
 
