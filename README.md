@@ -3,7 +3,9 @@
 ![Imagem do Jogo](https://media.discordapp.net/attachments/776467081922084915/1124489391604252772/image1.png?width=1870&height=1042)
 
 ## Descrição
-Space Battle X é um jogo de plataforma emocionante no qual o jogador assume o papel de um astronauta intrépido. Sua missão é explorar um planeta desconhecido, superando obstáculos e enfrentando inimigos alienígenas.
+
+Space Battle X foi desenvolvido como parte de um trabalho de projeto e desenvolvimento de jogos na Universidade da PUCRS, utilizando a engine Godot. Com gráficos em pixel art e jogabilidade rápida, prepare-se para uma batalha espacial épica. Mova-se, pule, atire para alcançar a vitória. Divirta-se neste jogo de plataforma emocionante!
+
 
 ## Capturas de Tela
 
