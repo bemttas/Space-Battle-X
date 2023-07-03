@@ -18,7 +18,7 @@ Space Battle X foi desenvolvido como parte de um trabalho de projeto e desenvolv
 
 ## Instalação
 
-1. Clone este repositório em sua máquina local. git clone https://github.com/seu-usuario/space-battle-x.git
+1. Clone este repositório em sua máquina local. (https://github.com/bemttas/Space-Battle-X-Godot3.5.2.git)
 3. Abra o Godot 3.5.2 (ou superior).
 4. Na interface do Godot, clique em "Importar" e selecione o diretório do jogo clonado.
 5. Selecione o arquivo do projeto e clique em "Abrir".
