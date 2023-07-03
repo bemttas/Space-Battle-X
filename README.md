@@ -14,7 +14,7 @@ Space Battle X foi desenvolvido como parte de um trabalho de projeto e desenvolv
 
 ## Requisitos
 
-- Godot 3.5.2 ou superior
+- Godot 3.5.2
 
 ## Instalação
 
