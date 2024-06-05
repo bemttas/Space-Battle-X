@@ -16,7 +16,7 @@ code = "	shader_type canvas_item;
 	uniform int type : hint_range(0,4) = 0;
 
 	void fragment() {
-		//Tipo Diamante Pixel
+		//Tipo Diamantee Pixel
 		if (type == 0) {
 			float xFraction = fract(FRAGCOORD.x / pixel_size);
 			float yFraction = fract(FRAGCOORD.y / pixel_size);
