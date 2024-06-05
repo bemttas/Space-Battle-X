@@ -1,6 +1,6 @@
 # Space Battle X
 
-![Imagem do Jogo](https://media.discordapp.net/attachments/776467081922084915/1124489391604252772/image1.png?width=1870&height=1042)
+![Imagem do Jogo](./imagem1.png)
 
 ## Descrição
 
@@ -9,8 +9,8 @@ Space Battle X foi desenvolvido como parte de um trabalho de projeto e desenvolv
 
 ## Capturas de Tela
 
-![Captura de Tela 1](https://media.discordapp.net/attachments/776467081922084915/1124489392044638299/image2.png?width=1854&height=1042)
-![Captura de Tela 2](https://media.discordapp.net/attachments/776467081922084915/1124489392619270274/image3.png?width=1866&height=1042)
+![Captura de Tela 1](./imagem2.png)
+![Captura de Tela 2](./imagem3.png)
 
 ## Requisitos
 
