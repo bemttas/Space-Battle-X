@@ -1,6 +1,6 @@
 # Space Battle X
 
-![Imagem do Jogo](./imagem1.png)
+![Imagem do Jogo](./image1.png)
 
 ## Descrição
 
@@ -9,8 +9,8 @@ Space Battle X foi desenvolvido como parte de um trabalho de projeto e desenvolv
 
 ## Capturas de Tela
 
-![Captura de Tela 1](./imagem2.png)
-![Captura de Tela 2](./imagem3.png)
+![Captura de Tela 1](./image2.png)
+![Captura de Tela 2](./image3.png)
 
 ## Requisitos
 
